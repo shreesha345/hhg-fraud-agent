@@ -1,0 +1,14 @@
+{
+  "name": "fraud-agent",
+  "private": true,
+  "version": "0.1.0",
+  "description": "TigerGraph agentic fraud investigation (Hacker House Goa)",
+  "packageManager": "pnpm@11.1.1",
+  "scripts": {
+    "dev:backend": "pnpm --filter @fraud/backend dev",
+    "dev:frontend": "pnpm --filter @fraud/frontend dev",
+    "test": "pnpm --filter @fraud/backend test",
+    "typecheck": "pnpm -r typecheck",
+    "run:cases": "pnpm --filter @fraud/backend run cases"
+  }
+}

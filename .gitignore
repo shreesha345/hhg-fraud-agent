@@ -1,0 +1,21 @@
+node_modules/
+.next/
+dist/
+.env
+.env.*
+!.env.example
+data/
+py/.venv/
+py/.ipynb_checkpoints/
+__pycache__/
+*.pyc
+# the provided dataset is not committed (708 MB); the synthetic test data IS committed
+Dataset/*
+!Dataset/test/
+!Dataset/README.md
+.DS_Store
+
+# build and run logs (regenerated every run)
+*.log
+video/remotion/out/stills/
+video/remotion/out/check-*.png

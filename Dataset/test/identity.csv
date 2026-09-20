@@ -1,0 +1,1153 @@
+TransactionID,DeviceType,DeviceInfo,id_15,id_23,id_30,id_31,id_33
+9000007,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9000010,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000013,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000023,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000027,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000036,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000037,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000040,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000046,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000048,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000060,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000065,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000073,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000085,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000091,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000093,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000110,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000114,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000117,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000119,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000120,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000126,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000127,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000130,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000135,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000137,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000139,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000143,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000151,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9000158,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000163,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000164,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000168,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000174,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000184,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000186,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000194,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000196,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000205,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000215,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9000230,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000239,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000247,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000251,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000252,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000254,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000261,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000265,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000270,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000273,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000279,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000293,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9000294,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000297,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000298,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000303,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000304,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000311,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000313,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000316,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000317,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000319,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000321,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000325,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000326,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000330,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000333,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000334,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000343,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000359,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000363,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000365,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000371,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000373,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000377,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000382,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000386,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000387,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000392,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000393,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000396,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000397,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000399,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000400,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000405,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000407,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000409,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000411,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000416,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000419,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000430,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000432,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000436,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000446,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000450,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000462,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9000463,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000468,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000474,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000475,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000477,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000481,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000482,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000485,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000488,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000489,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000491,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000497,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000506,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000507,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000509,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000511,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000513,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000514,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000516,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000517,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000521,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000523,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000524,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000525,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000527,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000536,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9000537,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000538,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000542,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000546,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000548,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000549,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000550,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000559,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000560,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000563,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000582,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000584,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000590,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000605,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9000606,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000608,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000612,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000616,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000623,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000625,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000626,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000632,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000638,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000641,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000642,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000648,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000658,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000660,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000664,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000667,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000678,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000679,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000680,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000682,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000684,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000690,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000694,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000703,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000705,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000712,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000719,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000720,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000723,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000724,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000727,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000733,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000734,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000735,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000740,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000755,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9000757,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000760,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000762,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000764,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000765,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000769,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000773,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000774,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000776,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000778,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000780,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000790,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000800,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000805,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000811,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000813,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9000816,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9000818,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000819,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000826,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000827,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000828,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000832,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000835,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000836,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000839,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000841,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000851,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000854,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000856,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000859,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000860,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000861,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000864,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000867,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000868,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000876,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000877,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000880,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000884,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000889,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000892,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000897,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000898,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9000905,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9000907,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000909,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000912,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000913,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000916,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000920,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000922,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000924,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000930,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000932,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000938,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000939,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000942,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000943,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000944,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000946,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000947,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000957,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000959,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000968,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000977,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000978,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000979,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000988,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9000991,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000992,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000993,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000994,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000996,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9000998,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001001,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001008,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001016,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001019,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001020,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001024,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001033,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001037,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001038,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001041,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001062,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001063,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001064,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001069,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9001070,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001081,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001084,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001089,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001092,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001093,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001094,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001096,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001099,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001100,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001104,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001110,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001111,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001112,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001118,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001119,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001127,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001142,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9001143,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001144,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001148,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001150,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001170,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001172,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001179,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001181,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001190,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001191,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001192,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001193,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001208,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001215,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9001220,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001221,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001226,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001231,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001234,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001240,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001241,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001248,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001250,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001261,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001262,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001263,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001265,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001266,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001267,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001268,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001270,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001271,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001280,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001286,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001287,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001289,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001299,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001315,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001319,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001322,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001330,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001332,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001340,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001344,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001346,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001350,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001351,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001353,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001354,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001355,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001364,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9001371,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001376,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001378,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001379,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001389,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001390,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001393,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001395,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001398,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001400,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001403,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001404,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001405,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001410,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001411,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001413,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001415,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001417,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001418,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001419,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001420,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001426,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001427,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001428,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001431,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001433,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001436,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001439,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001441,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001453,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9001458,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001463,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001471,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001472,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001479,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001482,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001486,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001487,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001489,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001501,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001515,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001516,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001520,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001524,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9001529,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001531,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001532,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001533,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001536,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001540,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001542,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001543,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001546,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001548,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001550,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001558,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001563,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001564,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001574,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001578,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001580,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001581,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001585,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001592,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001598,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001600,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001603,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001612,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001613,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001615,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001616,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001620,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001624,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001632,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001634,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001650,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001652,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001656,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001659,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001662,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001664,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001669,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001675,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9001679,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001682,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001683,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001684,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001691,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001692,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001694,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001697,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001705,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001707,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001710,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001711,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001713,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001717,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001718,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001727,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001738,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001739,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001746,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001757,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9001759,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001764,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001765,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001766,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001768,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001769,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001776,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001781,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001783,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001784,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001785,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001792,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001799,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001807,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001810,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001815,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001821,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001822,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001829,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001835,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9001838,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9001839,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001840,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001841,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001846,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001848,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001852,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001856,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001859,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001863,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001864,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001865,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001867,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001869,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001873,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001878,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001887,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001888,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001892,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001894,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001896,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001901,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9001908,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001909,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001913,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001916,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001924,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001925,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001928,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001932,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001936,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001942,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001943,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001947,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001950,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001953,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001957,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001967,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001973,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001974,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001975,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001976,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001977,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001980,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001982,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9001986,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9001989,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001992,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001995,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9001997,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002000,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002001,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002004,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002015,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002022,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002026,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002032,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002039,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002041,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002044,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002049,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9002050,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002054,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002057,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002059,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002061,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002063,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002064,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002067,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002068,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002070,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002073,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002074,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002084,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002092,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002096,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002100,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002104,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002109,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002112,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002118,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002121,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002122,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002126,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002129,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9002132,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002138,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002139,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002140,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002145,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002146,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002154,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002155,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002157,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002161,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002164,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002165,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002167,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002172,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002175,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002178,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002180,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002181,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002188,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002191,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002192,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002193,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002195,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002196,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002199,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002200,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002201,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002202,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002204,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002207,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002208,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002209,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002219,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002220,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002225,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002227,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002228,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002229,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002230,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002232,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002237,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002240,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002244,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002248,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002250,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002253,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002255,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002258,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002263,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002265,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002266,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002267,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002271,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002277,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9002280,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002282,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002286,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002292,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002298,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002310,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002312,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002316,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002322,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002324,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002332,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002333,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002336,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002344,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9002351,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002352,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002354,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002357,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002359,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002368,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002372,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002377,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002385,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002399,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002419,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9002422,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002431,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002432,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002440,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002442,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002444,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002445,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002451,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002465,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002468,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002473,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002484,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002493,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002501,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002516,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002518,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002524,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002533,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002537,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002543,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002546,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002549,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002550,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002554,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002557,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002558,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002574,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9002576,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002581,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002588,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002589,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002590,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002592,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002598,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002599,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002606,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002609,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002619,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002620,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002625,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002626,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002627,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002632,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002633,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002648,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9002652,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002657,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002658,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002661,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002662,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002665,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002669,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002671,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002672,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002673,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002683,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002686,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002691,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002693,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002700,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9002702,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002706,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002707,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002709,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002710,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002711,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002712,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002716,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002722,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002723,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002726,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002727,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002729,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002736,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002739,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002754,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002757,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002758,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002760,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002761,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002767,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9002769,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002772,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002777,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002778,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002780,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002781,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002782,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002785,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002786,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002794,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002796,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002802,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002803,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002813,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002819,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002820,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002825,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002842,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9002856,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9002862,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002863,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002864,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002867,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002869,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002870,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002878,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002879,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002880,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002881,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002886,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002887,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002892,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002893,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002897,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002899,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002901,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002904,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002909,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002910,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002921,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002924,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002925,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002926,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002929,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002937,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9002939,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9002948,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002951,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002953,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002958,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002966,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002967,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002973,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002988,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002991,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9002992,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003008,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003010,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9003011,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003016,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003022,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003023,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003029,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003036,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003039,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003044,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003049,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003050,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003051,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003057,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9003060,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003063,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003064,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003067,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003090,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003092,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003093,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003094,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003098,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003101,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003103,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003105,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003107,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003112,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003113,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003114,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003115,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003118,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003119,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003124,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003125,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003135,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003136,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003137,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003140,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9003141,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003147,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003149,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003152,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003154,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003156,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003158,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003167,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003175,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003177,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003178,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003179,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003180,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003183,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9003189,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003190,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003192,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003196,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003200,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003203,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003209,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003216,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003217,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003219,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003220,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003221,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003222,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003223,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003228,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9003242,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003243,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003244,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003248,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003256,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003264,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003265,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003266,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003268,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003271,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003275,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003281,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003283,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003285,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003286,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003287,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003288,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003290,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003292,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003294,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003296,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003297,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003299,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003301,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003304,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003306,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003307,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003308,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003311,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9003317,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003321,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003323,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003327,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003329,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003330,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003332,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003336,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003340,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003343,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003349,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003350,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003356,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9003357,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003358,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003367,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003368,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003370,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003376,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003380,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003381,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003389,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003391,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003392,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003393,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9003394,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003400,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003404,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003407,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003410,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003412,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003421,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003426,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003433,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003434,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003436,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003440,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003445,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003450,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003451,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003455,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003457,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003463,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003468,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003469,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003470,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003475,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003476,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003481,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9003487,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003489,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003490,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003491,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003495,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003499,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003500,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003510,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003513,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003517,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003518,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003521,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9003528,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003535,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003539,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003548,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003555,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003556,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003560,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003563,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003564,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003565,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003566,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003567,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003568,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9003570,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003579,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003583,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003607,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003613,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003614,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003615,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003616,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003629,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9003631,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003632,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003648,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003650,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003655,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003678,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9003680,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003685,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003687,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003697,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003698,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003702,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003704,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003707,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003711,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003719,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003727,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003728,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003729,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003733,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003741,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003743,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003749,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003754,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003757,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003763,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003769,mobile,iOS Device,New,,iOS 10.2.1,mobile safari 10.0,1136x640
+9003776,mobile,SM-G610F Build/NRD90M,New,,Android 7.0,chrome 63.0 for android,1920x1080
+9003777,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003778,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003784,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003793,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003799,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003801,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003802,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003804,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003805,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003806,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003808,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003810,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003812,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003813,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003815,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003816,mobile,SM-G610F Build/NRD90M,Found,,Android 7.0,chrome 63.0 for android,1920x1080
+9003820,mobile,LG-H870 Build/NRD90U,New,,Android 7.0,chrome 64.0 for android,1440x2880
+9003821,mobile,LG-H870 Build/NRD90U,Found,,Android 7.0,chrome 64.0 for android,1440x2880
+9003823,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9003827,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003829,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003831,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003833,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003834,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003838,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003839,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003841,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003842,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003849,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003858,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003862,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003868,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003870,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003871,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003876,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003881,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9003882,mobile,SM-J700M Build/MMB29K,New,,Android 6.0.1,chrome 63.0 for android,1280x720
+9003883,mobile,SM-J700M Build/MMB29K,Found,,Android 6.0.1,chrome 63.0 for android,1280x720
+9003884,mobile,SM-J700M Build/MMB29K,Found,,Android 6.0.1,chrome 63.0 for android,1280x720
+9003885,mobile,SM-J700M Build/MMB29K,Found,,Android 6.0.1,chrome 63.0 for android,1280x720
+9003886,mobile,SM-J700M Build/MMB29K,Found,,Android 6.0.1,chrome 63.0 for android,1280x720
+9003891,desktop,Windows,New,,Windows 7,ie 11.0 for desktop,1366x768
+9003893,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003895,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003898,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003901,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003902,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003904,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003909,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003911,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003913,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003916,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003918,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003919,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003923,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003926,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003927,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003933,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003938,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003941,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003942,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003943,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003944,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003945,desktop,Windows,Found,,Windows 7,ie 11.0 for desktop,1366x768
+9003952,mobile,iOS Device,New,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003959,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003975,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003983,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003987,mobile,iOS Device,Found,,iOS 11.2.1,mobile safari 11.0,2208x1242
+9003991,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003992,mobile,SM-G935F Build/NRD90M,New,IP_PROXY:ANONYMOUS,Android 7.0,chrome 62.0 for android,1920x1080
+9003995,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9003996,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004002,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004005,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004007,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004011,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004016,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004021,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004023,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004029,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004030,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004033,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004039,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004041,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004042,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004048,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004053,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004054,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004059,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004060,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004074,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9004084,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004085,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004086,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004087,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004088,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004090,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004091,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004095,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004102,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004104,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004106,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004109,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004112,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004114,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004118,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004120,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004125,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004134,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004137,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004139,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004147,mobile,iOS Device,New,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004149,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004152,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004156,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004157,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004161,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004163,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004164,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004165,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004169,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004171,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004173,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004177,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004179,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004181,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004184,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004185,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004187,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004190,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004191,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004193,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004196,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004197,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004198,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004200,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004201,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004203,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004204,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004207,mobile,iOS Device,Found,,iOS 9.3.5,mobile safari 9.0,1024x768
+9004208,mobile,iOS Device,New,,iOS 10.3.3,mobile safari 10.0,1334x750
+9004216,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9004226,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004227,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004231,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004239,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004240,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004248,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004249,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004250,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004252,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004256,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004261,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004269,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004271,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004273,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004276,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004278,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004281,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004282,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004292,desktop,Windows,New,,Windows 10,chrome 65.0,1920x1080
+9004295,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004298,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004300,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004301,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004302,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004304,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004306,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004307,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004309,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004310,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004313,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004318,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004319,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004320,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004322,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004323,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004324,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004326,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004331,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004333,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004337,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004348,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004349,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004350,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004351,desktop,Windows,Found,,Windows 10,chrome 65.0,1920x1080
+9004352,mobile,XT1635-02 Build/NPN25.137-35,New,,Android 7.0,chrome 65.0 for android,1080x1920
+9004353,mobile,XT1635-02 Build/NPN25.137-35,Found,,Android 7.0,chrome 65.0 for android,1080x1920
+9004354,mobile,XT1635-02 Build/NPN25.137-35,Found,,Android 7.0,chrome 65.0 for android,1080x1920

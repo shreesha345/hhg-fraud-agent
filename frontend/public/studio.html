@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presenter Studio · Fraud Investigator</title>
+<style>
+  :root { --bg:#070d1d; --panel:#0e1832; --line:#1f2f5c; --ink:#e8eefc; --mut:#8ea0cf; --cy:#3ee0d0; --bl:#5b8cff; --am:#ffb84d; --red:#ff6b6b; --ok:#4ade80; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font:16px/1.5 "Segoe UI",system-ui,sans-serif; overflow:hidden; }
+  button,select,input { font:inherit; color:inherit; }
+  button { background:#16244a; border:1px solid var(--line); border-radius:8px; padding:7px 13px; cursor:pointer; }
+  button:hover { background:#1c2f62; } button.on { background:var(--bl); border-color:var(--bl); color:#fff; }
+  button.big { background:var(--cy); color:#06222a; border-color:var(--cy); font-weight:700; padding:9px 20px; }
+  select,input[type=range] { background:#16244a; border:1px solid var(--line); border-radius:8px; padding:6px 8px; }
+  #bar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; padding:8px 14px; background:#0a1329; border-bottom:1px solid var(--line); height:54px; }
+  #bar .brand { font-weight:700; letter-spacing:.02em; margin-right:8px; } #bar .brand b { color:var(--cy); }
+  #bar .sp { flex:1; }
+  body.hidectl #bar, body.hidectl .ctl { display:none !important; }
+  main { height:calc(100% - 54px); } body.hidectl main { height:100%; }
+  section { height:100%; display:none; } section.show { display:flex; flex-direction:column; }
+  .ctl { display:flex; gap:12px; align-items:center; flex-wrap:wrap; padding:8px 14px; background:#0a1329; border-top:1px solid var(--line); font-size:14px; }
+  .ctl label { display:flex; gap:6px; align-items:center; color:var(--mut); }
+
+  /* ---------- teleprompter ---------- */
+  #teleWrap { position:relative; flex:1; overflow:hidden; background:#000; }
+  #teleWrap.mirror #scroller { transform:scaleX(-1); }
+  #scroller { position:absolute; inset:0; overflow:hidden; }
+  #content { margin:0 auto; padding:34vh 0 70vh; }
+  #marker { position:absolute; left:0; right:0; top:34%; height:0; border-top:2px solid rgba(62,224,208,.55); z-index:3; pointer-events:none; }
+  #marker::before,#marker::after { content:""; position:absolute; top:-9px; border:9px solid transparent; }
+  #marker::before { left:0; border-left-color:var(--cy); } #marker::after { right:0; border-right-color:var(--cy); }
+  #teleWrap::before,#teleWrap::after { content:""; position:absolute; left:0; right:0; height:26%; z-index:2; pointer-events:none; }
+  #teleWrap::before { top:0; background:linear-gradient(#000,transparent); } #teleWrap::after { bottom:0; background:linear-gradient(transparent,#000); }
+  .ch { margin:0 0 3.2em; }
+  .chTitle { font:700 .5em/1.2 "Segoe UI",sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--cy); margin-bottom:.7em; }
+  .ch p { margin:.2em 0 .9em; font-weight:600; line-height:1.45; }
+  .cue { border:3px solid var(--am); border-radius:16px; padding:.5em .8em; margin:1.1em 0 1.3em; background:rgba(255,184,77,.08); }
+  .cue .ct { font:700 .5em/1.2 "Segoe UI",sans-serif; letter-spacing:.12em; text-transform:uppercase; color:var(--am); }
+  .cue code { display:block; font:600 .62em/1.35 Consolas,monospace; color:#ffe2a8; background:#150f00; border-radius:8px; padding:.35em .6em; margin:.4em 0; word-break:break-all; }
+  .cue p { margin:.2em 0; }
+
+  /* ---------- AI presenter ---------- */
+  #stageBox { flex:1; display:grid; place-items:center; padding:10px; background:radial-gradient(circle at 30% 20%,#101d45,#050a18 70%); }
+  #stage { position:relative; width:min(100%,calc((100vh - 130px)*16/9)); aspect-ratio:16/9; container-type:size; border-radius:18px; overflow:hidden; background:linear-gradient(135deg,#0b1533,#070d1d); border:1px solid var(--line); box-shadow:0 20px 70px #000a; }
+  body.hidectl #stage { width:min(100%,calc(100vh*16/9)); }
+  #left { position:absolute; left:0; top:0; bottom:0; width:33%; display:grid; place-items:center; padding-bottom:12%; }
+  #avWrap { position:relative; width:78%; aspect-ratio:1/1.05; }
+  #ring { position:absolute; inset:-6%; border-radius:50%; border:3px solid transparent; }
+  #avWrap.speaking #ring { border-color:rgba(62,224,208,.5); animation:pulse 1.1s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { transform:scale(.97); opacity:.35; } 50% { transform:scale(1.04); opacity:1; } }
+  #head { animation:bob 4.5s ease-in-out infinite; transform-origin:200px 380px; } @keyframes bob { 0%,100% { transform:rotate(-1.2deg) translateY(0);} 50% { transform:rotate(1.2deg) translateY(-4px);} }
+  #eyes { transform-origin:200px 178px; transition:transform .09s; } #eyes.blink { transform:scaleY(.08); }
+  #ant { animation:blinkant 1.6s ease-in-out infinite; } @keyframes blinkant { 0%,100% { opacity:.35; } 50% { opacity:1; } }
+  #bars { position:absolute; left:50%; bottom:-4%; transform:translateX(-50%); display:flex; gap:5px; align-items:flex-end; height:9%; }
+  #bars i { display:block; width:6px; height:6px; background:var(--cy); border-radius:3px; transition:height .08s; }
+  #name { position:absolute; left:6%; top:5%; font:700 1.3cqw/1 "Segoe UI",sans-serif; letter-spacing:.14em; color:var(--cy); }
+  #name small { display:block; margin-top:.5cqw; color:var(--mut); font-weight:400; letter-spacing:.06em; }
+  #right { position:absolute; left:33%; right:0; top:0; bottom:0; padding:3.2cqw 3cqw 13cqh 1cqw; display:flex; flex-direction:column; }
+  #vtitle { font:700 2.6cqw/1.15 "Segoe UI",sans-serif; margin-bottom:1.6cqw; } #vtitle small { display:block; color:var(--cy); font-size:.5em; letter-spacing:.16em; text-transform:uppercase; margin-bottom:.4em; }
+  #visual { flex:1; min-height:0; }
+  #subs { position:absolute; left:3cqw; right:3cqw; bottom:2.6cqw; min-height:8.5cqh; padding:1cqw 1.6cqw; background:rgba(4,8,20,.82); border:1px solid var(--line); border-radius:14px; font:500 2cqw/1.4 "Segoe UI",sans-serif; text-align:center; }
+  #subs .w { opacity:.5; transition:opacity .1s; } #subs .w.on { opacity:1; color:var(--cy); } #subs .w.past { opacity:.85; color:var(--ink); }
+  #prog { position:absolute; left:0; bottom:0; height:5px; background:linear-gradient(90deg,var(--cy),var(--bl)); width:0; transition:width .3s; }
+  #demoCard { position:absolute; inset:0; display:none; place-items:center; background:rgba(5,9,22,.92); z-index:5; text-align:center; }
+  #demoCard.show { display:grid; } #demoCard h2 { font:800 5cqw/1.1 "Segoe UI",sans-serif; color:var(--am); margin:0 0 1.4cqw; } #demoCard p { font:600 2.1cqw/1.5 "Segoe UI",sans-serif; margin:.3cqw 0; color:var(--ink); }
+  #demoCard .k { color:var(--mut); font-size:1.6cqw; margin-top:2cqw; }
+
+  /* visuals */
+  .tiles { display:grid; grid-template-columns:repeat(2,1fr); gap:1.6cqw; }
+  .tile { background:var(--panel); border:1px solid var(--line); border-radius:1.4cqw; padding:1.6cqw 1.8cqw; }
+  .tile .n { font:800 4.6cqw/1 "Segoe UI",sans-serif; color:var(--cy); } .tile .l { font:500 1.7cqw/1.3 "Segoe UI",sans-serif; color:var(--mut); margin-top:.5cqw; }
+  .tile.warn .n { color:var(--am); } .tile.bad .n { color:var(--red); }
+  .list { display:grid; gap:1.1cqw; } .item { display:flex; gap:1.2cqw; align-items:center; background:var(--panel); border:1px solid var(--line); border-radius:1.2cqw; padding:1.1cqw 1.5cqw; font:600 1.85cqw/1.25 "Segoe UI",sans-serif; }
+  .item b { color:var(--cy); } .item .ic { flex:none; width:3.2cqw; height:3.2cqw; border-radius:50%; background:var(--bl); display:grid; place-items:center; font:700 1.6cqw "Segoe UI"; color:#fff; }
+  .item .ic.ok { background:var(--ok); color:#052; } .item small { display:block; color:var(--mut); font-weight:400; font-size:.82em; }
+  .rv { opacity:0; transform:translateY(1.4cqw); transition:opacity .5s, transform .5s; } .rv.on { opacity:1; transform:none; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:1.6cqw; } .card h3 { margin:0 0 .8cqw; font:700 1.9cqw "Segoe UI"; } .card { background:var(--panel); border:1px solid var(--line); border-radius:1.4cqw; padding:1.4cqw 1.6cqw; font:500 1.6cqw/1.45 "Segoe UI"; }
+  .chip { display:inline-block; background:#16244a; border:1px solid var(--line); border-radius:99px; padding:.25cqw 1cqw; margin:.3cqw; font:600 1.45cqw "Segoe UI"; }
+  .big2 { font:800 5.4cqw/1.1 "Segoe UI",sans-serif; } .grad { background:linear-gradient(90deg,var(--cy),var(--bl)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  svg text { font-family:"Segoe UI",sans-serif; } .flow { stroke-dasharray:6 6; animation:dash 1.2s linear infinite; } @keyframes dash { to { stroke-dashoffset:-24; } }
+
+  /* help */
+  #help { position:fixed; inset:0; background:#000c; display:none; place-items:center; z-index:50; } #help.show { display:grid; }
+  #help div { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px 26px; max-width:640px; } #help kbd { background:#16244a; border:1px solid var(--line); border-radius:5px; padding:1px 7px; }
+  #err { color:var(--red); padding:20px; }
+</style>
+</head>
+<body>
+<div id="bar">
+  <span class="brand">Presenter <b>Studio</b></span>
+  <button id="mTele" class="on">Teleprompter</button>
+  <button id="mAi">AI presenter</button>
+  <span class="sp"></span>
+  <label style="color:var(--mut);font-size:14px">Edition
+    <select id="edition"><option value="short">Submission cut (~5 min)</option><option value="full">Full detailed (~12 min)</option></select></label>
+  <label style="color:var(--mut);font-size:14px">Chapter <select id="chapSel"></select></label>
+  <button id="helpBtn" title="Shortcuts">?</button>
+  <button id="hideBtn" title="Hide controls (H)">Hide controls</button>
+</div>
+
+<main>
+  <!-- teleprompter -->
+  <section id="tele" class="show">
+    <div id="teleWrap"><div id="marker"></div><div id="scroller"><div id="content"></div></div></div>
+    <div class="ctl">
+      <button id="tPlay" class="big">▶ Start</button>
+      <button id="tRestart">Restart</button>
+      <button id="tPrev">◀ Chapter</button><button id="tNext">Chapter ▶</button>
+      <label>Speed <input id="wpm" type="range" min="90" max="220" step="5" value="150"> <b id="wpmV">150</b> wpm</label>
+      <label>Text size <input id="fs" type="range" min="28" max="96" step="2" value="52"></label>
+      <label>Width <input id="fw" type="range" min="40" max="100" step="5" value="80"></label>
+      <button id="mirror">Mirror (glass)</button>
+      <span id="teleInfo" style="margin-left:auto;color:var(--mut)"></span>
+    </div>
+  </section>
+
+  <!-- AI presenter -->
+  <section id="ai">
+    <div id="stageBox">
+      <div id="stage">
+        <div id="name">AI PRESENTER<small>Fraud Investigator</small></div>
+        <div id="left">
+          <div id="avWrap"><div id="ring"></div>
+            <svg id="avatar" viewBox="0 0 400 420" width="100%" height="100%">
+              <defs>
+                <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a6cf7"/><stop offset="1" stop-color="#1b2a78"/></linearGradient>
+                <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3f9a"/><stop offset="1" stop-color="#101a4d"/></linearGradient>
+                <radialGradient id="eg"><stop offset="0" stop-color="#b8fff7"/><stop offset="1" stop-color="#3ee0d0"/></radialGradient>
+              </defs>
+              <path d="M40 420 Q60 330 200 320 Q340 330 360 420 Z" fill="url(#bg)"/>
+              <rect x="170" y="296" width="60" height="40" rx="10" fill="#22336f"/>
+              <g id="head">
+                <line x1="200" y1="46" x2="200" y2="78" stroke="#7d92e8" stroke-width="6" stroke-linecap="round"/>
+                <circle id="ant" cx="200" cy="38" r="12" fill="#3ee0d0"/>
+                <circle cx="48" cy="184" r="20" fill="#2a3f9a"/><circle cx="352" cy="184" r="20" fill="#2a3f9a"/>
+                <rect x="60" y="74" width="280" height="240" rx="78" fill="url(#hg)"/>
+                <rect x="84" y="100" width="232" height="188" rx="56" fill="#08102c"/>
+                <g id="eyes"><rect x="128" y="150" width="46" height="56" rx="20" fill="url(#eg)"/><rect x="226" y="150" width="46" height="56" rx="20" fill="url(#eg)"/>
+                  <circle cx="145" cy="166" r="7" fill="#fff" opacity=".8"/><circle cx="243" cy="166" r="7" fill="#fff" opacity=".8"/></g>
+                <ellipse id="mouth" cx="200" cy="248" rx="26" ry="4" fill="#3ee0d0"/>
+                <circle cx="112" cy="240" r="13" fill="#ff8fb1" opacity=".22"/><circle cx="288" cy="240" r="13" fill="#ff8fb1" opacity=".22"/>
+              </g>
+            </svg>
+            <div id="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div id="right"><div id="vtitle"></div><div id="visual"></div></div>
+        <div id="subs"></div>
+        <div id="prog"></div>
+        <div id="demoCard"><div><h2>LIVE DEMO</h2><p>Switch to your terminal and your browser.</p><p>The AI presenter waits here.</p><p class="k">Press Continue (or the space bar) when the demo is finished.</p></div></div>
+      </div>
+    </div>
+    <div class="ctl">
+      <button id="aPlay" class="big">▶ Play</button>
+      <button id="aPrev">◀ Chapter</button><button id="aNext">Chapter ▶</button><button id="aCont" style="display:none">Continue after demo ▶</button>
+      <label>Voice <select id="voice"></select></label>
+      <label>Speed <input id="rate" type="range" min="0.8" max="1.3" step="0.05" value="1"></label>
+      <button id="vtest">Test voice</button>
+      <span id="aInfo" style="margin-left:auto;color:var(--mut)"></span>
+    </div>
+  </section>
+</main>
+
+<div id="help"><div>
+  <h3 style="margin-top:0">Shortcuts</h3>
+  <p><kbd>Space</kbd> start / pause &nbsp; <kbd>H</kbd> hide controls (clean recording) &nbsp; <kbd>T</kbd> teleprompter &nbsp; <kbd>A</kbd> AI presenter</p>
+  <p>Teleprompter: <kbd>↑</kbd><kbd>↓</kbd> nudge &nbsp; <kbd>+</kbd><kbd>-</kbd> speed &nbsp; <kbd>[</kbd><kbd>]</kbd> text size &nbsp; <kbd>M</kbd> mirror &nbsp; <kbd>R</kbd> restart &nbsp; <kbd>N</kbd><kbd>P</kbd> chapter</p>
+  <p>Tip: open this page in <b>Microsoft Edge</b> for the natural-sounding online voices (Aria, Guy, Jenny). Press <kbd>F11</kbd> for full screen.</p>
+  <p style="color:var(--mut)">Click anywhere to close.</p>
+</div></div>
+
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+const store = { get(k, d) { try { return localStorage.getItem(k) ?? d; } catch { return d; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+let S = null, edition = store.get("edition", "short"), chapters = [], mode = "tele";
+const words = (t) => t.trim().split(/\s+/).filter(Boolean).length;
+const esc = (t) => t.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+function build() {
+  const short = edition === "short";
+  chapters = S.chapters.filter((c) => !short || c.core).map((c) => ({
+    ...c,
+    body: c.type === "demo" ? (short ? c.shortText || c.text : c.text) : short ? c.short || c.text : c.text,
+    cues: c.type === "demo" ? c.cues.filter((q) => !short || q.short).map((q) => ({ ...q, say: short && q.shortSay ? q.shortSay : q.say })) : [],
+  }));
+  $("chapSel").innerHTML = chapters.map((c, i) => `<option value="${i}">${i + 1}. ${esc(c.title)}</option>`).join("");
+}
+
+/* ================= teleprompter ================= */
+let tPlaying = false, last = 0, teleChap = 0;
+function renderTele() {
+  $("content").innerHTML = chapters.map((c, i) => `<div class="ch" id="ch${i}"><div class="chTitle">${i + 1} · ${esc(c.title)}</div><p>${esc(c.body)}</p>${c.cues.map((q) =>
+    `<div class="cue"><div class="ct">▶ DO THIS — ${esc(q.title)}</div>${q.command ? `<code>${esc(q.command)}</code>` : ""}<p>${esc(q.say)}</p></div>`).join("")}</div>`).join("");
+  applyStyle(); updateInfo();
+}
+function applyStyle() {
+  $("content").style.fontSize = $("fs").value + "px"; $("content").style.width = $("fw").value + "%";
+  $("wpmV").textContent = $("wpm").value;
+}
+function totalWords() { return chapters.reduce((a, c) => a + words(c.body) + c.cues.reduce((b, q) => b + words(q.say), 0), 0); }
+function pxPerSec() { const sc = $("scroller"); return (($("content").scrollHeight - sc.clientHeight * 1.04) / Math.max(1, totalWords())) * ($("wpm").value / 60); }
+function tick(t) {
+  if (tPlaying) {
+    const sc = $("scroller"); const dt = Math.min(0.1, (t - last) / 1000); sc.scrollTop += pxPerSec() * dt;
+    if (sc.scrollTop >= sc.scrollHeight - sc.clientHeight - 2) setPlaying(false);
+    updateInfo();
+  }
+  last = t; requestAnimationFrame(tick);
+}
+function currentChapterByScroll() {
+  const sc = $("scroller"), line = sc.scrollTop + sc.clientHeight * 0.34 + 30; let idx = 0;
+  chapters.forEach((_, i) => { const el = $("ch" + i); if (el && el.offsetTop <= line + 30) idx = i; }); return idx;
+}
+function updateInfo() {
+  const sc = $("scroller"); const idx = currentChapterByScroll(); teleChap = idx; $("chapSel").value = idx;
+  const remainPx = Math.max(0, sc.scrollHeight - sc.clientHeight - sc.scrollTop); const secs = remainPx / Math.max(1, pxPerSec());
+  $("teleInfo").textContent = `Chapter ${idx + 1}/${chapters.length} · about ${Math.floor(secs / 60)}:${String(Math.round(secs % 60)).padStart(2, "0")} left`;
+}
+function setPlaying(p) { tPlaying = p; $("tPlay").textContent = p ? "❚❚ Pause" : "▶ Start"; }
+function jumpTele(i) { i = Math.max(0, Math.min(chapters.length - 1, i)); const sc = $("scroller"); sc.scrollTop = $("ch" + i).offsetTop - sc.clientHeight * 0.34 + 30 - 20 + 0; teleChap = i; updateInfo(); }
+
+/* ================= AI presenter ================= */
+const synth = window.speechSynthesis; let voices = [], segs = [], cursor = 0, aPlaying = false, run = 0, speaking = false, curChap = -1, awaitingDemo = false;
+
+const V = {
+  hook: () => `<div class="two"><div class="card rv" data-at="0.0"><h3 style="color:var(--red)">A thief?</h3>Stolen card details, bought online in minutes.</div><div class="card rv" data-at="0.35"><h3 style="color:var(--ok)">Or a customer?</h3>On holiday, with a brand-new phone.</div></div>
+    <div class="rv big2 grad" data-at="0.7" style="margin-top:2.4cqw">Same alert. Opposite answers.</div>`,
+  trap: () => `<div class="tiles"><div class="tile warn rv" data-at="0.2"><div class="n">900 / 900</div><div class="l">cleared cases had a HIGH bank score (0.81 or more)</div></div>
+    <div class="tile bad rv" data-at="0.5"><div class="n">31%</div><div class="l">of confirmed fraud scored under 0.30</div></div></div>
+    <div class="item rv" data-at="0.8" style="margin-top:1.6cqw"><span class="ic">!</span><span><b>The bank's own risk score is close to a decoy.</b> The agent must look deeper.</span></div>`,
+  numbers: () => `<div class="tiles">${[["590,742", "payments"], ["14,318", "cards"], ["9,706", "device profiles"], ["5,565", "past investigations"]].map((t, i) => `<div class="tile rv" data-at="${i * 0.2}"><div class="n" data-count="${t[0].replace(/,/g, "")}">0</div><div class="l">${t[1]} in the TigerGraph graph</div></div>`).join("")}</div>
+    <div class="item rv" data-at="0.85" style="margin-top:1.6cqw"><span class="ic ok">✓</span><span>Same rare device on many cards? A graph sees it in milliseconds.</span></div>`,
+  arch: () => `<svg viewBox="0 0 900 500" width="100%" height="100%">
+    <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#3ee0d0"/></marker></defs>
+    ${box(10, 170, 190, 90, "Console", "your browser", "#5b8cff")}${box(290, 170, 210, 90, "The agent", "TypeScript · decides with rules", "#3ee0d0")}
+    ${box(600, 20, 290, 130, "TigerGraph (cloud)", "16 GSQL queries · vectors", "#ffb84d")}${box(600, 300, 290, 130, "Ollama · AI model", "gemma4 writes the text", "#c084fc")}
+    <line class="flow" x1="200" y1="215" x2="288" y2="215" stroke="#3ee0d0" stroke-width="3" marker-end="url(#ar)"/>
+    <line class="flow" x1="500" y1="190" x2="598" y2="110" stroke="#3ee0d0" stroke-width="3" marker-end="url(#ar)"/>
+    <line class="flow" x1="500" y1="240" x2="598" y2="330" stroke="#3ee0d0" stroke-width="3" marker-end="url(#ar)"/>
+    <text x="450" y="118" fill="#ffb84d" font-size="19" text-anchor="middle" transform="rotate(-34 450 118)">via the MCP server</text>
+    <text x="450" y="340" fill="#c084fc" font-size="19" text-anchor="middle" transform="rotate(34 450 340)">words + similar cases</text>
+    <rect x="10" y="418" width="580" height="72" rx="14" fill="#0e1832" stroke="#1f2f5c"/>
+    <text x="30" y="448" fill="#e8eefc" font-size="21" font-weight="700">The graph analyses.  <tspan fill="#ffb84d">Fixed bank rules decide.</tspan>  <tspan fill="#c084fc">The AI only explains.</tspan></text>
+    <text x="30" y="476" fill="#8ea0cf" font-size="17">The agent never writes to the database directly and never lets the AI choose an action.</text></svg>`,
+  steps: () => `<div class="list">${["Read the alert, frozen at the moment it opened", "Argue both sides: signs of fraud vs. honest explanations", "Check links to known fraud (ignores the bank score)", "Compare with similar past cases", "Weigh it all into one chance of fraud", "Apply the bank's rules: actions and who approves", "The AI writes the summary and the report", "Double-check every ID and rule"].map((t, i) =>
+    `<div class="item rv" data-at="${(i / 8) * 0.9}"><span class="ic">${i + 1}</span>${t}</div>`).join("")}</div>`,
+  honest: () => `<div class="list">${[["No look-ahead", "every query is cut off at the alert's opening time"], ["No fake data", "the customer's reply is not in the data, so none is invented"], ["Every ID exists", "315 IDs in 20 files checked against the source"], ["No fake text", "if the AI model fails, the case stops with a clear error"], ["138 tests", "pass locally; the same suite passes on the live cloud graph"]].map((t, i) =>
+    `<div class="item rv" data-at="${(i / 5) * 0.9}"><span class="ic ok">✓</span><span><b>${t[0]}</b><small>${t[1]}</small></span></div>`).join("")}</div>`,
+  proof: () => `<div class="tiles"><div class="tile rv" data-at="0.1"><div class="n">0.77</div><div class="l">AUC on 300 held-out past cases (0.5 = coin flip)</div></div>
+    <div class="tile rv" data-at="0.35"><div class="n">97%</div><div class="l">of "likely fraud" verdicts were really fraud</div></div>
+    <div class="tile warn rv" data-at="0.6"><div class="n">15%</div><div class="l">exact fraud pattern named correctly</div></div>
+    <div class="tile warn rv" data-at="0.8"><div class="n">under</div><div class="l">percentages under-report fraud: next fix</div></div></div>`,
+  demo: () => `<div class="list">${["Database check", "Tests", "Investigate alert HHG-014", "Read the answer", "Break the model on purpose", "Backtest", "Open the console"].map((t, i) => `<div class="item"><span class="ic">${i + 1}</span>${t}</div>`).join("")}</div>`,
+  close: () => `<div class="list"><div class="item rv" data-at="0.1"><span class="ic ok">✓</span><span><b>A graph</b> that finds the links</span></div><div class="item rv" data-at="0.3"><span class="ic ok">✓</span><span><b>Rules</b> that decide</span></div><div class="item rv" data-at="0.5"><span class="ic ok">✓</span><span><b>An AI</b> that explains</span></div><div class="item rv" data-at="0.7"><span class="ic ok">✓</span><span><b>Nothing</b> made up</span></div></div>
+    <div class="card rv" data-at="0.85" style="margin-top:1.6cqw"><h3>Next</h3>Better calibration · naming fraud patterns · account takeover</div>`,
+  graph: () => {
+    const N = [["Customer", 30, 205], ["Card", 250, 205], ["Transaction", 470, 205], ["Device profile", 690, 60], ["Billing region", 690, 205], ["Email domain", 690, 350], ["Past case", 250, 380]];
+    const E = [[0, 1, "owns"], [1, 2, "made"], [2, 3, "from device"], [2, 4, "billed in"], [2, 5, "email"], [6, 1, "on card"], [6, 2, "involves"]];
+    const c = (i) => [N[i][1] + 90, N[i][2]];
+    return `<svg viewBox="0 0 900 450" width="100%" height="100%"><defs><marker id="ar2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#3ee0d0"/></marker></defs>
+    ${E.map(([a, b, l]) => { const p = c(a), q = c(b); const dx = q[0] - p[0], dy = q[1] - p[1], d = Math.hypot(dx, dy) || 1; const x1 = p[0] + (dx / d) * 92, y1 = p[1] + (dy / d) * 36, x2 = q[0] - (dx / d) * 96, y2 = q[1] - (dy / d) * 40;
+      return `<line class="flow" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#3ee0d0" stroke-width="3" marker-end="url(#ar2)"/><text x="${(x1 + x2) / 2}" y="${(y1 + y2) / 2 - 8}" fill="#8ea0cf" font-size="15" text-anchor="middle">${l}</text>`; }).join("")}
+    ${N.map(([n, x, y], i) => box(x, y - 36, 180, 72, n, i === 6 ? "closed investigation" : "", i === 6 ? "#ffb84d" : "#5b8cff")).join("")}
+    <text x="30" y="440" fill="#8ea0cf" font-size="17">Every time-based edge carries its timestamp, and every query takes an as-of time.</text></svg>`;
+  },
+  signals: () => `<div class="two"><div class="card rv" data-at="0.1"><h3 style="color:var(--am)">Signs of fraud</h3>${["Tiny test payments, then a big one", "Bursts of unusual online buying", "A device never seen on the account", "Purchases just under a limit", "A rare device used across many cards", "Used far away while home spending continues"].map((x) => `<div>• ${x}</div>`).join("")}</div>
+    <div class="card rv" data-at="0.5"><h3 style="color:var(--ok)">Signs it is innocent</h3>${["A real trip", "A new phone replacing the old one", "A regular repeating charge", "Normal spending for this card"].map((x) => `<div>• ${x}</div>`).join("")}<div style="margin-top:1cqw;color:var(--mut)">Cards shared by many people count for less.</div></div></div>`,
+  cases: () => `<div class="two"><div class="card rv" data-at="0.1"><h3>HHG-006 · Structuring</h3>4 purchases in 30 minutes, each just under $500:<div><span class="chip">$478.95</span><span class="chip">$456.96</span><span class="chip">$488.04</span><span class="chip">$482.12</span></div><b style="color:var(--am)">$1,906.07 total</b></div>
+    <div class="card rv" data-at="0.55"><h3>HHG-014 · The ring</h3>Bank score only <b>0.05</b>.<br>One rare device: <b style="color:var(--red)">44 customers</b>, always "new", always behind an anonymous proxy.<br><span style="color:var(--mut)">No single card shows it. The graph does.</span></div></div>`,
+  policy: () => `<div class="card rv" data-at="0.1"><h3>The policy is code, not prompts</h3>${["R1 verify before blocking on one weak signal", "R2 customer denies: block + case", "R3 confirms: close", "R4 no reply: monitor + decline pending", "R5–R9 card testing, shared origin, recurring, undocumented", "R10 never block all cards without proof"].map((x) => `<div>• ${x}</div>`).join("")}</div>
+    <div class="two rv" data-at="0.6" style="margin-top:1.4cqw"><div class="tile"><div class="l">Agent alone</div><div class="n" style="font-size:2.4cqw">auto</div></div><div class="tile warn"><div class="l">Block up to $2,500</div><div class="n" style="font-size:2.4cqw">Team lead</div></div><div class="tile bad"><div class="l">Block over $2,500 · file a report</div><div class="n" style="font-size:2.4cqw">Fraud manager</div></div></div>`,
+  rag: () => `<div class="list">${["The case, described in words", "Turned into a vector (embedding model)", "TigerGraph vector search: similar past cases and policy text", "Graph expansion: which cards and devices those cases touched", "A short, cited context for the AI writer", "It never changes a probability or an action"].map((t, i) => `<div class="item rv" data-at="${(i / 6) * 0.9}"><span class="ic">${i + 1}</span>${t}</div>`).join("")}</div>`,
+  model: () => `<div class="two"><div class="card rv" data-at="0.1"><h3>Chosen in one setting</h3><span class="chip">gemma4:31b-cloud (free)</span><span class="chip">glm-5.3:cloud (paid)</span><span class="chip">qwen2.5-coder:7b (local)</span></div>
+    <div class="card rv" data-at="0.5"><h3>Every reply is checked</h3>Numbers must be in the brief · sentence counts fit · every subject named · 3 tries, then a clear error</div></div>`,
+  eng: () => `<div class="list">${["One data interface, two implementations, one test suite", "A validator for every answer file", "A backtest that replays closed cases", "One-click launcher, one settings file", "A console that shows the steps and the message log"].map((t, i) => `<div class="item rv" data-at="${(i / 5) * 0.9}"><span class="ic ok">✓</span>${t}</div>`).join("")}</div>`,
+};
+function box(x, y, w, h, t, sub, c) { return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="16" fill="#0e1832" stroke="${c}" stroke-width="3"/><text x="${x + w / 2}" y="${y + h / 2 - (sub ? 2 : -7)}" fill="#e8eefc" font-size="22" font-weight="700" text-anchor="middle">${t}</text>${sub ? `<text x="${x + w / 2}" y="${y + h / 2 + 24}" fill="#8ea0cf" font-size="15" text-anchor="middle">${sub}</text>` : ""}`; }
+
+function buildSegs() {
+  segs = [];
+  chapters.forEach((c, ci) => {
+    const sents = c.body.match(/[^.!?]+[.!?]+(\s|$)|[^.!?]+$/g)?.map((s) => s.trim()).filter(Boolean) ?? [c.body];
+    sents.forEach((t, i) => segs.push({ ci, type: "say", text: t, i, n: sents.length }));
+    if (c.type === "demo") segs.push({ ci, type: "demo" });
+  });
+}
+function chapterStart(ci) { const i = segs.findIndex((s) => s.ci === ci); return i < 0 ? 0 : i; }
+function showChapter(ci) {
+  if (ci === curChap) return; curChap = ci; const c = chapters[ci];
+  $("vtitle").innerHTML = `<small>Chapter ${ci + 1} of ${chapters.length}</small>${esc(c.title)}`;
+  $("visual").innerHTML = (V[c.visual] ?? (() => ""))(); $("chapSel").value = ci;
+  document.querySelectorAll("[data-count]").forEach((el) => countUp(el, +el.dataset.count));
+  reveal(0);
+  $("prog").style.width = ((ci / chapters.length) * 100).toFixed(1) + "%";
+}
+function countUp(el, to) { const t0 = performance.now(), d = 1400; (function f(t) { const k = Math.min(1, (t - t0) / d); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))).toLocaleString(); if (k < 1) requestAnimationFrame(f); })(t0); }
+function reveal(frac) { document.querySelectorAll("#visual .rv").forEach((el) => { if (+(el.dataset.at ?? 0) <= frac + 0.001) el.classList.add("on"); }); }
+function subs(text, upto = -1) { const ws = text.split(/(\s+)/); let k = 0, pos = 0; $("subs").innerHTML = ws.map((w) => { if (/^\s+$/.test(w)) { pos += w.length; return w; } const st = pos; pos += w.length; const cls = upto < 0 ? "" : st < upto ? "past" : st === upto ? "on" : ""; k++; return `<span class="w ${cls}" data-s="${st}">${esc(w)}</span>`; }).join(""); }
+
+function pickVoice() {
+  voices = synth.getVoices().filter((v) => /^en/i.test(v.lang));
+  const score = (v) => (/natural|online/i.test(v.name) ? 5 : 0) + (/aria|guy|jenny|ryan|sonia|libby/i.test(v.name) ? 3 : 0) + (/google/i.test(v.name) ? 2 : 0) + (/en-US|en-GB/i.test(v.lang) ? 1 : 0);
+  voices.sort((a, b) => score(b) - score(a));
+  $("voice").innerHTML = voices.map((v, i) => `<option value="${i}">${esc(v.name)} (${v.lang})</option>`).join("") || "<option>(no voices found)</option>";
+  const saved = store.get("voice", ""); const ix = voices.findIndex((v) => v.name === saved); if (ix >= 0) $("voice").value = ix;
+}
+function speak(text, done) {
+  const my = ++run; synth.cancel(); const u = new SpeechSynthesisUtterance(text); const v = voices[+$("voice").value]; if (v) u.voice = v; u.rate = +$("rate").value; u.pitch = 1;
+  subs(text, -1);
+  u.onstart = () => { speaking = true; $("avWrap").classList.add("speaking"); };
+  u.onboundary = (e) => { if (my === run) subs(text, e.charIndex); };
+  const end = () => { if (my !== run) return; speaking = false; $("avWrap").classList.remove("speaking"); subs(text, 1e9); done(); };
+  u.onend = end; u.onerror = (e) => { if (e.error === "canceled" || e.error === "interrupted") return; end(); };
+  synth.speak(u);
+}
+function step() {
+  if (!aPlaying) return;
+  if (cursor >= segs.length) { aPlaying = false; setAPlay(); $("subs").textContent = "That is the full walkthrough. Thank you!"; $("prog").style.width = "100%"; return; }
+  const s = segs[cursor]; showChapter(s.ci);
+  if (s.type === "demo") { awaitingDemo = true; aPlaying = false; setAPlay(); $("demoCard").classList.add("show"); $("aCont").style.display = ""; $("subs").textContent = "Live demo: over to the terminal and browser."; return; }
+  reveal((s.i + 1) / s.n);
+  $("aInfo").textContent = `Chapter ${s.ci + 1}/${chapters.length}`;
+  speak(s.text, () => { cursor++; step(); });
+}
+function setAPlay() { $("aPlay").textContent = aPlaying ? "❚❚ Pause" : "▶ Play"; }
+function aToggle() {
+  if (awaitingDemo) { continueAfterDemo(); return; }
+  aPlaying = !aPlaying; setAPlay(); if (aPlaying) { if (synth.paused) synth.resume(); step(); } else { run++; synth.cancel(); speaking = false; $("avWrap").classList.remove("speaking"); }
+}
+function continueAfterDemo() { awaitingDemo = false; $("demoCard").classList.remove("show"); $("aCont").style.display = "none"; cursor++; aPlaying = true; setAPlay(); step(); }
+function aJump(ci) { ci = Math.max(0, Math.min(chapters.length - 1, ci)); run++; synth.cancel(); awaitingDemo = false; $("demoCard").classList.remove("show"); $("aCont").style.display = "none"; curChap = -1; cursor = chapterStart(ci); showChapter(ci); $("aInfo").textContent = `Chapter ${ci + 1}/${chapters.length}`; if (aPlaying) step(); else subs(chapters[ci].title, -1); }
+
+/* avatar animation */
+(function loop(t) {
+  const m = $("mouth"); const open = speaking ? 4 + 15 * Math.abs(Math.sin(t / 95) * Math.cos(t / 210 + 1)) : 4; m.setAttribute("ry", open.toFixed(1)); m.setAttribute("rx", (speaking ? 22 + 8 * Math.abs(Math.sin(t / 140)) : 26).toFixed(1));
+  document.querySelectorAll("#bars i").forEach((b, i) => { b.style.height = (speaking ? 8 + 90 * Math.abs(Math.sin(t / 110 + i * 1.3) * Math.cos(t / 230 + i)) : 6) + "%"; });
+  requestAnimationFrame(loop);
+})(0);
+setInterval(() => { const e = $("eyes"); e.classList.add("blink"); setTimeout(() => e.classList.remove("blink"), 130); }, 3200);
+
+/* ================= wiring ================= */
+function setMode(m) {
+  mode = m; $("tele").classList.toggle("show", m === "tele"); $("ai").classList.toggle("show", m === "ai");
+  $("mTele").classList.toggle("on", m === "tele"); $("mAi").classList.toggle("on", m === "ai");
+  if (m === "tele") { run++; synth.cancel(); aPlaying = false; setAPlay(); } else { setPlaying(false); if (curChap < 0) { buildSegs(); showChapter(0); subs("Press Play and I will walk you through the project.", -1); } }
+  store.set("mode", m);
+}
+function boot() {
+  build(); $("edition").value = edition; renderTele(); buildSegs(); pickVoice(); if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = pickVoice;
+  $("fs").value = store.get("fs", "52"); $("wpm").value = store.get("wpm", String(S.wpm ?? 150)); $("fw").value = store.get("fw", "80"); applyStyle();
+  $("edition").onchange = (e) => { edition = e.target.value; store.set("edition", edition); build(); renderTele(); buildSegs(); curChap = -1; cursor = 0; run++; synth.cancel(); aPlaying = false; setAPlay(); if (mode === "ai") showChapter(0); $("scroller").scrollTop = 0; };
+  $("chapSel").onchange = (e) => (mode === "tele" ? jumpTele(+e.target.value) : aJump(+e.target.value));
+  $("mTele").onclick = () => setMode("tele"); $("mAi").onclick = () => setMode("ai");
+  $("tPlay").onclick = () => setPlaying(!tPlaying); $("tRestart").onclick = () => { $("scroller").scrollTop = 0; updateInfo(); };
+  $("tPrev").onclick = () => jumpTele(teleChap - 1); $("tNext").onclick = () => jumpTele(teleChap + 1);
+  $("wpm").oninput = () => { store.set("wpm", $("wpm").value); applyStyle(); updateInfo(); }; $("fs").oninput = () => { store.set("fs", $("fs").value); applyStyle(); }; $("fw").oninput = () => { store.set("fw", $("fw").value); applyStyle(); };
+  $("mirror").onclick = () => { $("teleWrap").classList.toggle("mirror"); $("mirror").classList.toggle("on"); };
+  $("aPlay").onclick = aToggle; $("aPrev").onclick = () => aJump(Math.max(0, (segs[cursor]?.ci ?? 0) - 1)); $("aNext").onclick = () => aJump((segs[cursor]?.ci ?? 0) + 1); $("aCont").onclick = continueAfterDemo;
+  $("voice").onchange = () => store.set("voice", voices[+$("voice").value]?.name ?? "");
+  $("vtest").onclick = () => { aPlaying = false; setAPlay(); speak("Hello. I am the AI presenter for the Fraud Investigator project.", () => {}); };
+  $("helpBtn").onclick = () => $("help").classList.add("show"); $("help").onclick = () => $("help").classList.remove("show");
+  $("hideBtn").onclick = () => document.body.classList.add("hidectl");
+  addEventListener("keydown", (e) => {
+    if (e.target && /INPUT|SELECT|TEXTAREA/.test(e.target.tagName) && e.key !== "Escape") { if (e.key === " ") e.preventDefault(); if (e.target.tagName !== "SELECT" || e.key !== " ") return; }
+    const k = e.key.toLowerCase();
+    if (k === "h") document.body.classList.toggle("hidectl"); else if (k === "t") setMode("tele"); else if (k === "a") setMode("ai");
+    else if (k === " ") { e.preventDefault(); mode === "tele" ? setPlaying(!tPlaying) : aToggle(); }
+    else if (mode === "tele") {
+      const sc = $("scroller");
+      if (e.key === "ArrowDown") sc.scrollTop += 60; else if (e.key === "ArrowUp") sc.scrollTop -= 60;
+      else if (k === "+" || k === "=") { $("wpm").value = Math.min(220, +$("wpm").value + 5); $("wpm").oninput(); } else if (k === "-") { $("wpm").value = Math.max(90, +$("wpm").value - 5); $("wpm").oninput(); }
+      else if (k === "]") { $("fs").value = Math.min(96, +$("fs").value + 2); $("fs").oninput(); } else if (k === "[") { $("fs").value = Math.max(28, +$("fs").value - 2); $("fs").oninput(); }
+      else if (k === "m") $("mirror").click(); else if (k === "r") $("tRestart").click(); else if (k === "n") $("tNext").click(); else if (k === "p") $("tPrev").click();
+    } else if (k === "n") $("aNext").click(); else if (k === "p") $("aPrev").click();
+    else if (e.key === "Escape") $("help").classList.remove("show");
+  });
+  requestAnimationFrame(tick);
+  if (store.get("mode", "tele") === "ai") setMode("ai");
+}
+fetch("/video-script.json", { cache: "no-store" }).then((r) => r.json()).then((j) => { S = j; boot(); }).catch((e) => { document.body.innerHTML = `<div id="err">Could not load /video-script.json (${e.message}). Open this page from the console server: http://localhost:3000/studio.html</div>`; });
+</script>
+</body>
+</html>

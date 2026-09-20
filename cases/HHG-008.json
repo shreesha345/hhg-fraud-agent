@@ -1,0 +1,120 @@
+{
+  "case_id": "HHG-008",
+  "case": {
+    "status": "closed_fraud",
+    "verdict": "fraud",
+    "fraud_probability": 0.892,
+    "pattern": "card_not_present_new_device",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3553223",
+      "3554288",
+      "3554589",
+      "3554683",
+      "3555638",
+      "3556719",
+      "3557987",
+      "3558054"
+    ],
+    "first_suspicious_txn_id": "3553223",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "? | ? | chrome 66.0 | ?"
+    ],
+    "exposure_usd": 353.34,
+    "evidence": [
+      {
+        "claim": "Device profile marked New for this account; 125 customer(s) have used this profile so far",
+        "source": "graph",
+        "ref": "signature:new_device(profile=? | ? | chrome 66.0 | ?)",
+        "entity_ids": [
+          "3553223",
+          "3554288",
+          "3554589",
+          "3554683",
+          "3555638",
+          "3556719",
+          "3557987"
+        ]
+      },
+      {
+        "claim": "Customer reports they did not make transaction 3558054",
+        "source": "graph",
+        "ref": "trigger:customer_report",
+        "entity_ids": [
+          "3558054"
+        ]
+      },
+      {
+        "claim": "Recalled 5 similar closed case(s): 5 confirmed fraud, 0 cleared",
+        "source": "graph",
+        "ref": "memory:recall(CC-2673,CC-2862,CC-2938,CC-2965,CC-3749)",
+        "entity_ids": [
+          "CC-2673",
+          "CC-2862",
+          "CC-2938",
+          "CC-2965",
+          "CC-3749"
+        ]
+      },
+      {
+        "claim": "Policy R2 governs this recommendation: R2. Customer denies the transaction. Recommend `BLOCK_CARD` and `CREATE_CASE`. Add `FILE_REPORT` if exposure exceeds $1,000 or the case connects to a shared device profile or another card's fraud.",
+        "source": "document",
+        "ref": "document:policy:R2",
+        "entity_ids": [
+          "3558054"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-2673",
+      "CC-2862",
+      "CC-2938",
+      "CC-2965",
+      "CC-3749"
+    ],
+    "summary": "Customer C13171 reported transaction 3558054 as unauthorized, triggering a fraud case for card C13171-K2. Eight online transactions occurred between 2016-12-18 and 2016-12-19 with a total exposure of 353.34. The activity follows a card_not_present_new_device pattern, as the device profile used was new to the account and shared by 125 other customers. Based on policy R2, the card was blocked and a case was created.",
+    "written_to_graph": true,
+    "graph_case_id": "FC-HHG-008"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "L1",
+        "reason": "R2: the customer reports they did not make the transaction"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "R2: the customer reports they did not make the transaction"
+      }
+    ],
+    "final": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "L1",
+        "reason": "R2: the customer reports they did not make the transaction"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "R2: the customer reports they did not make the transaction"
+      }
+    ],
+    "what_changed": "nothing"
+  },
+  "sar": {
+    "file": false,
+    "reason": "No reporting condition holds (exposure at or under $1,000, no shared device, pattern not undocumented).",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 0,
+    "activity_dates": []
+  },
+  "stop_reason": "Probability 0.89 is at or above 0.85 and supported by 2 independent evidence classes (customer_reply, memory), so a defensible action exists and further steps would not change it.",
+  "tool_calls": 51,
+  "tokens": 1859,
+  "latency_s": 8.665
+}

@@ -1,0 +1,103 @@
+{
+  "case_id": "HHG-019",
+  "case": {
+    "status": "closed_legitimate",
+    "verdict": "legitimate",
+    "fraud_probability": 0.027,
+    "pattern": "none",
+    "pattern_description": "",
+    "affected_txn_ids": [],
+    "first_suspicious_txn_id": "",
+    "connected_card_ids": [],
+    "connected_device_profiles": [],
+    "exposure_usd": 0,
+    "evidence": [
+      {
+        "claim": "Device profile is marked New, but at a bank score of 0.90 that is more often a new phone than fraud (closed history: 86% of cleared alerts in this zone vs 21% of fraud)",
+        "source": "graph",
+        "ref": "signature:new_device_at_high_score(profile=Windows | other | chrome 61.0 | 1280x720)",
+        "entity_ids": [
+          "3503878"
+        ]
+      },
+      {
+        "claim": "New device replaces an earlier one on this card (same Windows family, earlier device used 3 times and now quiet); no proxy, not a shared fingerprint",
+        "source": "graph",
+        "ref": "signature:device_succession",
+        "entity_ids": [
+          "3503878"
+        ]
+      },
+      {
+        "claim": "Amount $99.92 is within the card's own p95 ($561.04); product and region already used; no burst",
+        "source": "graph",
+        "ref": "signature:baseline_consistent",
+        "entity_ids": [
+          "3503878"
+        ]
+      },
+      {
+        "claim": "Recalled 5 similar closed case(s): 0 confirmed fraud, 5 cleared",
+        "source": "graph",
+        "ref": "memory:recall(CC-5262,CC-5324,CC-5331,CC-5462,CC-5525)",
+        "entity_ids": [
+          "CC-5262",
+          "CC-5324",
+          "CC-5331",
+          "CC-5462",
+          "CC-5525"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-5262",
+      "CC-5324",
+      "CC-5331",
+      "CC-5462",
+      "CC-5525"
+    ],
+    "summary": "Case HHG-019 was triggered by a risk score for customer C07987, but the verdict is legitimate with a fraud probability of 0.027. The transaction amount of $99.92 is within the card's p95 baseline, and the new device profile replaces an earlier one without the use of a proxy. Five similar recalled cases were all cleared, and the transaction was allowed and closed as no fraud.",
+    "written_to_graph": true,
+    "graph_case_id": "FC-HHG-019"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "ALLOW_TRANSACTION",
+        "route": "auto",
+        "reason": "Probability 0.03 is at or below 0.15 with 3 independent classes supporting innocence"
+      },
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "Probability 0.03 is at or below 0.15 with 3 independent classes supporting innocence"
+      }
+    ],
+    "final": [
+      {
+        "action": "ALLOW_TRANSACTION",
+        "route": "auto",
+        "reason": "Probability 0.03 is at or below 0.15 with 3 independent classes supporting innocence"
+      },
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "Probability 0.03 is at or below 0.15 with 3 independent classes supporting innocence"
+      }
+    ],
+    "what_changed": "nothing"
+  },
+  "sar": {
+    "file": false,
+    "reason": "No fraud suspected, so no report is required.",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 0,
+    "activity_dates": []
+  },
+  "stop_reason": "Probability 0.03 is at or below 0.15 and supported by 3 independent evidence classes (device, card_behaviour, memory), so a defensible action exists and further steps would not change it.",
+  "tool_calls": 24,
+  "tokens": 1392,
+  "latency_s": 8.875
+}

@@ -1,0 +1,91 @@
+{
+  "case_id": "HHG-004",
+  "case": {
+    "status": "closed_fraud",
+    "verdict": "fraud",
+    "fraud_probability": 0.847,
+    "pattern": "card_not_present_new_device",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3580804",
+      "3583227"
+    ],
+    "first_suspicious_txn_id": "3580804",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "? | ? | firefox 47.0 | ?"
+    ],
+    "exposure_usd": 221.19,
+    "evidence": [
+      {
+        "claim": "Device profile marked New for this account; 6 customer(s) have used this profile so far",
+        "source": "graph",
+        "ref": "signature:new_device(profile=? | ? | firefox 47.0 | ?)",
+        "entity_ids": [
+          "3580804",
+          "3583227"
+        ]
+      },
+      {
+        "claim": "Customer reports they did not make transaction 3583227",
+        "source": "graph",
+        "ref": "trigger:customer_report",
+        "entity_ids": [
+          "3583227"
+        ]
+      },
+      {
+        "claim": "Policy R2 governs this recommendation: R2. Customer denies the transaction. Recommend `BLOCK_CARD` and `CREATE_CASE`. Add `FILE_REPORT` if exposure exceeds $1,000 or the case connects to a shared device profile or another card's fraud.",
+        "source": "document",
+        "ref": "document:policy:R2",
+        "entity_ids": [
+          "3583227"
+        ]
+      }
+    ],
+    "similar_prior_cases": [],
+    "summary": "Customer C08106 reported that they did not make transaction 3583227, triggering a fraud case with a total exposure of 221.19. Two online transactions occurred on 2016-12-28 and 2016-12-29 using a device profile marked as new for this account. This device profile has been used by 6 customers. Per policy R2, the card has been blocked and a case created.",
+    "written_to_graph": true,
+    "graph_case_id": "FC-HHG-004"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "L1",
+        "reason": "R2: the customer reports they did not make the transaction"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "R2: the customer reports they did not make the transaction"
+      }
+    ],
+    "final": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "L1",
+        "reason": "R2: the customer reports they did not make the transaction"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "R2: the customer reports they did not make the transaction"
+      }
+    ],
+    "what_changed": "nothing"
+  },
+  "sar": {
+    "file": false,
+    "reason": "No reporting condition holds (exposure at or under $1,000, no shared device, pattern not undocumented).",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 0,
+    "activity_dates": []
+  },
+  "stop_reason": "Not enough independent evidence and no further permitted evidence request; escalating under R8. Open: The customer has not been asked about this transaction.",
+  "tool_calls": 25,
+  "tokens": 1288,
+  "latency_s": 8.085
+}

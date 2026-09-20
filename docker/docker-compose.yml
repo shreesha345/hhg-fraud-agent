@@ -1,0 +1,25 @@
+# TigerGraph Community Edition (includes native vector search from 4.2).
+#   docker compose -f docker/docker-compose.yml up -d
+# GraphStudio and GSQL: http://localhost:14240   REST++: http://localhost:9000   (user tigergraph)
+# Needs about 16 GB for Docker/WSL (docs minimum). Data persists in the `tgdata` volume.
+services:
+  tigergraph:
+    image: tigergraph/community:4.2.5
+    container_name: fraud-tigergraph
+    hostname: fraud-tigergraph
+    ports:
+      - "14240:14240"   # GraphStudio + GSQL server
+      - "9000:9000"     # REST++
+      - "14022:22"      # ssh
+    ulimits:
+      nofile:
+        soft: 1000000
+        hard: 1000000
+    volumes:
+      - tgdata:/home/tigergraph/tigergraph/data
+      - ../data:/data:ro        # exported loading files: /data/tg-test, /data/tg-real
+      - ../gsql:/gsql:ro        # schema and query templates
+    restart: unless-stopped
+
+volumes:
+  tgdata:

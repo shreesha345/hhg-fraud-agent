@@ -1,0 +1,135 @@
+# Fraud Investigator: an AI that checks suspicious card payments and shows its work
+
+Teleprompter script at 150 words per minute. Two editions from one source:
+
+- **Submission cut (about 3 minutes)**: the condensed text of the CORE chapters, and the demo steps marked SHORT. The hackathon asks for 3 to 5 minutes.
+- **Full detailed edition**: the long text of every chapter, including the deep dives, and all demo steps.
+
+## The problem in one minute  ·  submission 0:11  ·  full 0:29
+
+**Submission cut:** Banks get thousands of fraud alerts a day. A thief, or a customer on holiday? This AI investigator decides, shows every step, and never makes anything up.
+
+**Full edition:** Every day, a bank gets thousands of alerts saying a card payment might be fraud. Someone has to decide: is this a thief, or just a customer on holiday with a new phone? Block the wrong card and you lose a customer. Miss the thief and the bank loses money. Today I will show you an AI investigator that makes that call, shows every step of its work, and never makes anything up.
+
+## The task, and the trap  ·  submission 0:13  ·  full 0:42
+
+**Submission cut:** Twenty alerts. For each: the kind of fraud, the next action and who approves it, plus a case and a regulator report. The catch: the bank's risk score is almost a decoy.
+
+**Full edition:** We were given twenty alerts. For each one the agent must decide what kind of fraud it is, or that the customer is innocent, work out how far it goes, and recommend the next best action, together with who has to approve it. It must also write a case and, when the rules require it, a report for the regulator. Here is the trap. The bank's own risk score is close to a decoy. Every one of the nine hundred cleared cases in the history had a high score, and nearly a third of the confirmed fraud scored low. So we cannot simply trust the score.
+
+## The idea: fraud lives in the connections  ·  submission 0:09  ·  full 0:26
+
+**Submission cut:** Fraud lives in connections, so everything is a TigerGraph graph: five hundred and ninety thousand payments, fourteen thousand cards, five thousand past cases.
+
+**Full edition:** Fraud is about connections. One rare phone setup used across many different cards. Purchases kept just under a limit. So we store everything as a graph in TigerGraph: five hundred and ninety thousand payments, over fourteen thousand cards, nearly ten thousand device profiles, and five and a half thousand past investigations. A graph finds those links in milliseconds, where a plain table would struggle.
+
+## The architecture  ·  submission 0:13  ·  full 0:40
+
+**Submission cut:** Four parts: a browser console; the agent; TigerGraph in the cloud, asked through the MCP server; and an Ollama AI model. The graph analyses, fixed bank rules decide, and the AI only explains.
+
+**Full edition:** There are four parts. First, the console, which you see in the browser. Second, the agent, a TypeScript program that runs the investigation. Third, the TigerGraph cloud database on Savanna. The agent never touches it directly: it asks sixteen installed GSQL queries through the TigerGraph MCP server. Fourth, Ollama, running a cloud AI model that writes the words, plus a small embedding model that finds similar past cases by meaning. That last part is GraphRAG. The golden rule is simple. The graph does the analysis. Fixed bank rules decide the actions. The AI only puts the findings into words.
+
+## How the agent thinks  ·  submission 0:12  ·  full 0:54
+
+**Submission cut:** Every case is frozen at the moment it opened, so there is no look-ahead. The agent argues fraud against innocence, then the bank's rules choose the action and who approves it.
+
+**Full edition:** Each investigation is a series of steps you can watch. It reads the alert, frozen at the moment it opened, so it can never see the future. Then it argues both sides, like a prosecutor and a defence lawyer: signs of fraud, and honest explanations like a trip or a new phone. It runs a link check, a personalised PageRank from known fraud that ignores the bank score. It compares with past cases, and adds everything into one chance of fraud, counting facts of the same kind only once. Then the bank's ten policy rules decide the actions and the approval route: the agent alone, a team lead, or a fraud manager. Only at the end does the AI write the summary and the report, and a validator checks every ID and every rule.
+
+## No faking: the guardrails  ·  submission 0:10  ·  full 0:40
+
+**Submission cut:** No faking: no invented customer replies, every ID checked, and if the AI fails, the case stops with an error. A hundred and thirty-eight tests pass.
+
+**Full edition:** We were strict about honesty. No look-ahead: every database query is cut off at the time the alert opened. No fake data: the customer's reply is not in the dataset, so the agent does not invent one. It follows the no-reply rule and shows the plan for every possible answer. Every ID in every answer file exists in the data; we checked three hundred and fifteen. If the AI model cannot write, the case stops with a clear error, instead of pretending. And one hundred and thirty-eight automated tests pass locally, and the same suite passes on the live cloud graph.
+
+## The honest scorecard  ·  submission 0:10  ·  full 0:36
+
+**Submission cut:** Honest scorecard on three hundred replayed cases: AUC point seven seven, likely fraud right ninety-seven percent, but calibration and pattern naming still need work.
+
+**Full edition:** How good is it? We replayed three hundred past closed cases from October, each frozen at its opening time, and compared with what really happened. It ranks real fraud above innocent cases with an AUC of point seven seven: decent, not great. When it says likely fraud, it is right ninety-seven percent of the time. But its percentages under-report fraud, and it names the exact fraud pattern only fifteen percent of the time. That is our next piece of work. I would rather show you real numbers than pretty ones.
+
+## Deep dive: the TigerGraph design  ·  full edition only  ·  full 0:42
+
+In TigerGraph we use local types so nothing collides with the sample graph. Customers own cards, cards make transactions, and each transaction links to a device profile, a billing region and an email domain. Past investigations are vertices too, linked to the cards and transactions they involved. Every edge that is queried by time carries its timestamp, and every one of the sixteen installed queries takes an as-of time, which is how we make look-ahead impossible. Vector attributes on closed cases and policy passages let us search by meaning. Finished cases are written back as case, evidence and action vertices, linked to everything they cite.
+
+## Deep dive: the signatures  ·  full edition only  ·  full 0:40
+
+On the prosecution side the agent looks for tiny test payments followed by a big one, bursts of unusual online purchases, a device never seen on the account, purchases kept just under a limit, a rare device shared by many cards, and use far from home while home spending continues. On the defence side it looks for a real trip, a new phone replacing an old one, a regular repeating charge with a coincidence test, and spending that is normal for the card. A special rule handles cards shared by many people, so unusual activity counts for less there.
+
+## Deep dive: two cases  ·  full edition only  ·  full 0:30
+
+Alert six is structuring: four online purchases within thirty minutes, each just under five hundred dollars, nineteen hundred and six dollars in total. The bank scored it low, but the pattern is the giveaway, and it matches earlier closed cases. Alert fourteen is the ring: a device that looks unremarkable to the bank, yet forty-four customers share it, always marked new, always behind an anonymous proxy. No single card shows it. Only the graph does.
+
+## Deep dive: the rules and approvals  ·  full edition only  ·  full 0:36
+
+The bank's policy is code, not prompts. A weak single signal must be verified, never blocked outright. A denial means block the card and open a case. A confirmation closes it. No reply means monitor and decline pending payments. Card testing, shared origins and undocumented patterns each have their own rule. Blocking a card up to twenty-five hundred dollars needs a team lead, above that a fraud manager, and filing a report always needs a fraud manager. The agent only recommends; it may act alone only on the safe automatic actions.
+
+## Deep dive: GraphRAG  ·  full edition only  ·  full 0:32
+
+For GraphRAG we embedded the policy rules, the five known fraud patterns, FinCEN guidance on suspicious activity reports, and the notes of every closed case, using a local embedding model. At run time the agent turns the case into a vector, searches TigerGraph for similar passages, and then expands along the graph to see which cards and devices those past cases touched. The result is a short, cited context for the AI writer. It never changes a probability or an action.
+
+## Deep dive: the AI model and the rules for it  ·  full edition only  ·  full 0:36
+
+The writer is chosen in one settings file. We use a free cloud model through Ollama, gemma four thirty-one billion, and can switch to a local model or a paid one with one line. The model receives only decided facts and cannot add actions, routes, amounts or IDs. Every reply is checked: numbers must appear in the brief, sentence counts must fit, every subject must be named. If it fails three times, the case stops with an error. No template text is ever shown as if the AI wrote it.
+
+## Deep dive: engineering  ·  full edition only  ·  full 0:28
+
+The data layer is one asynchronous interface with two implementations, an in-memory one and a TigerGraph one, and the same tests prove both behave identically. There is a validator for every answer file, a backtest harness that replays closed cases, a one-click launcher, and a console that shows the steps, the connections and the message log. The whole project is documented so anyone can run it from a single settings file.
+
+## LIVE DEMO  ·  submission 1:57  ·  full 2:44
+
+Now the live demo. First the terminal, then the browser.
+
+**1. Is the database awake?**  (SHORT)
+
+    bash scripts/tg-check.sh
+
+> First, a health check. The address is reachable, the secret works, and TigerGraph reports version four point two point five with our two graphs.
+
+**2. Prove it with tests**  (SHORT)
+
+    pnpm test
+
+> One hundred and thirty-eight tests, in about two seconds. The same suite also runs against the live cloud graph.
+
+**3. Investigate one real alert**  (SHORT)
+
+    pnpm --filter @fraud/backend run cases -- --only HHG-014 --write-graph --out data/out-demo
+
+> Alert fourteen. The bank score was only point zero five, almost certainly innocent by the score. Watch what the graph finds. It reads the database through MCP, looks up similar cases, and asks the AI model to write the text.
+
+**4. Read the answer**  (SHORT)
+
+    node video/show-case.mjs data/out-demo/HHG-014.json
+
+> Likely fraud, ninety-four percent. Forty-four customers share one rare device, always new, always behind an anonymous proxy. The agent recommends monitoring the linked cards, opening a case, escalating, and filing a report that needs a fraud manager. The rules decide that, not the AI.
+
+**5. Show it fails honestly**  (SHORT)
+
+    cmd /c "set LLM_MODEL_OLLAMA=no-such-model&& pnpm --filter @fraud/backend run cases -- --only HHG-019 --out data/out-fail"
+
+> Now I break the AI model on purpose. The case stops with a clear message, and no fake text is written.
+
+**6. The backtest**  (SHORT)
+
+    pnpm --filter @fraud/backend run backtest -- --limit 300
+
+> Three hundred past cases replayed with no look-ahead. These are the honest numbers from before.
+
+**7. Open the console**
+
+    run-all.bat
+
+> One click starts everything. Now the browser.
+
+**8. In the browser**  (SHORT)
+
+> Pick alert fourteen and press Investigate. Each step appears with what it found and why. Here are the signs of fraud and signs of innocence, the result, the next best action with the approval buttons, and the report for the regulator. And this panel shows who talked to whom: the messages to TigerGraph, to the embedding model, and to the AI writer. Everything you see comes from real logs.
+
+## What is next, and thank you  ·  submission 0:08  ·  full 0:20
+
+**Submission cut:** A graph that finds the links, rules that decide, an AI that explains, and nothing made up. Thank you.
+
+**Full edition:** To sum up: a graph that finds the links, fixed rules that decide, an AI that explains, and nothing made up. Next we will fix the calibration so the percentages mean what they say, teach it to name fraud patterns properly, and add account takeover detection. Thank you for watching.
+
+---
+Total: submission cut about 3:23, full detailed edition about 11:35.

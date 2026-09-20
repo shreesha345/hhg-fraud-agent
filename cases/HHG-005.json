@@ -1,0 +1,180 @@
+{
+  "case_id": "HHG-005",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.208,
+    "pattern": "none",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3523199"
+    ],
+    "first_suspicious_txn_id": "3523199",
+    "connected_card_ids": [],
+    "connected_device_profiles": [],
+    "exposure_usd": 100.07,
+    "evidence": [
+      {
+        "claim": "Device profile marked New for this account; 110 customer(s) have used this profile so far",
+        "source": "graph",
+        "ref": "signature:new_device(profile=iOS Device | iOS 9.3.5 | mobile safari 9.0 | 1024x768)",
+        "entity_ids": [
+          "3523199"
+        ]
+      },
+      {
+        "claim": "Amount $100.07 is within the card's own p95 ($856.25); product and region already used; no burst",
+        "source": "graph",
+        "ref": "signature:baseline_consistent",
+        "entity_ids": [
+          "3523199"
+        ]
+      },
+      {
+        "claim": "Bank model scored the flagged transaction 0.54. Mid range: weak evidence",
+        "source": "graph",
+        "ref": "model:risk_score",
+        "entity_ids": [
+          "3523199"
+        ]
+      },
+      {
+        "claim": "Recalled 5 similar closed case(s): 1 confirmed fraud, 4 cleared",
+        "source": "graph",
+        "ref": "memory:recall(CC-0189,CC-0219,CC-0374,CC-0965,CC-1672)",
+        "entity_ids": [
+          "CC-0189",
+          "CC-0219",
+          "CC-0374",
+          "CC-0965",
+          "CC-1672"
+        ]
+      },
+      {
+        "claim": "Policy R4 governs this recommendation: R4. No reply within 24 hours. Recommend `MONITOR_CARD` and `DECLINE_TRANSACTION` for pending authorizations. Escalate if exposure exceeds $500.",
+        "source": "document",
+        "ref": "document:policy:R4",
+        "entity_ids": [
+          "3523199"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-0189",
+      "CC-0219",
+      "CC-0374",
+      "CC-0965",
+      "CC-1672"
+    ],
+    "summary": "Case HHG-005 involves a $100.07 online transaction for customer C02923 that triggered a risk score alert. The transaction used a new device profile shared by 110 customers, though the amount is consistent with the card's baseline. Due to no customer reply within 24 hours, policy R4 was applied to decline the transaction and monitor the card.",
+    "written_to_graph": true,
+    "graph_case_id": "FC-HHG-005"
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 4,
+      "assumed_response": "No reply from the customer is available. The dataset has no customer replies and none is invented, so policy R4 (no reply within 24 hours) applies; the plans for \"not me\" and \"it was me\" are in the contingency table. Fraud probability stays at the pre-reply p=0.21."
+    }
+  ],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "Probability 0.21 is between the stop thresholds; the customer's answer settles it"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Policy 3a: evidence is being requested, so an internal case exists"
+      }
+    ],
+    "final": [
+      {
+        "action": "DECLINE_TRANSACTION",
+        "route": "L1",
+        "reason": "R4: decline pending authorizations while unanswered"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "R4: no customer reply within 24 hours"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Policy 3a: evidence was requested, so a case exists"
+      }
+    ],
+    "what_changed": "With no customer reply available (fraud_probability stays at the pre-reply 0.21), R4 governs, so the recommendation changed from VERIFY_WITH_CUSTOMER, CREATE_CASE to DECLINE_TRANSACTION, MONITOR_CARD, CREATE_CASE.",
+    "contingency": [
+      {
+        "reply": "denies",
+        "rules": [
+          "R2"
+        ],
+        "actions": [
+          {
+            "action": "BLOCK_CARD",
+            "route": "L1",
+            "reason": "R2: the customer denied the transaction"
+          },
+          {
+            "action": "CREATE_CASE",
+            "route": "auto",
+            "reason": "R2: the customer denied the transaction"
+          }
+        ]
+      },
+      {
+        "reply": "confirms",
+        "rules": [
+          "R3"
+        ],
+        "actions": [
+          {
+            "action": "CLOSE_NO_FRAUD",
+            "route": "auto",
+            "reason": "R3: the customer confirmed the transaction"
+          }
+        ]
+      },
+      {
+        "reply": "silent",
+        "rules": [
+          "R4"
+        ],
+        "actions": [
+          {
+            "action": "DECLINE_TRANSACTION",
+            "route": "L1",
+            "reason": "R4: decline pending authorizations while unanswered"
+          },
+          {
+            "action": "MONITOR_CARD",
+            "route": "auto",
+            "reason": "R4: no customer reply within 24 hours"
+          },
+          {
+            "action": "CREATE_CASE",
+            "route": "auto",
+            "reason": "Policy 3a: evidence was requested, so a case exists"
+          }
+        ]
+      }
+    ]
+  },
+  "sar": {
+    "file": false,
+    "reason": "No reporting condition holds (exposure at or under $1,000, no shared device, pattern not undocumented).",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 0,
+    "activity_dates": []
+  },
+  "stop_reason": "No reply from the customer is available, so policy R4 governs and further evidence requests would not change the decision.",
+  "tool_calls": 24,
+  "tokens": 1509,
+  "latency_s": 7.806
+}

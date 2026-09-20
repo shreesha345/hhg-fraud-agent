@@ -1,0 +1,149 @@
+USE GRAPH @G@
+
+// Every query that touches history takes as_of (epoch seconds) and never returns anything later. This is the no-look-ahead contract.
+
+// ---------------------------------------------------------------- reads used by the agent
+// Transactions by id, with card, customer and device (batch form; ids must exist).
+CREATE OR REPLACE QUERY get_txns(SET<VERTEX<Transaction>> ids) FOR GRAPH @G@ {
+  SumAccum<STRING> @card_id, @cust, @profile, @proxy;
+  OrAccum @is_new;
+  S = ids;
+  X = SELECT t FROM S:t -(MADE_BY:e)-> BankCard:c ACCUM t.@card_id = c.id, t.@cust = c.customer;
+  Y = SELECT t FROM S:t -(FROM_DEVICE:d)-> DeviceProfile:p ACCUM t.@profile = p.id, t.@is_new = d.is_new, t.@proxy = d.proxy_kind;
+  PRINT S[S.ts, S.amt, S.prod, S.channel, S.score, S.region, S.@card_id, S.@cust, S.@profile, S.@is_new, S.@proxy] AS txns;
+}
+
+// Every transaction on a card up to as_of, with its device record.
+CREATE OR REPLACE QUERY card_history(VERTEX<BankCard> card, INT as_of) FOR GRAPH @G@ {
+  SumAccum<STRING> @profile, @proxy;
+  OrAccum @is_new;
+  S = {card};
+  X = SELECT t FROM S:c -(MADE:e)-> Transaction:t WHERE e.ts <= as_of;
+  Y = SELECT t FROM X:t -(FROM_DEVICE:d)-> DeviceProfile:p ACCUM t.@profile = p.id, t.@is_new = d.is_new, t.@proxy = d.proxy_kind;
+  PRINT X[X.ts, X.amt, X.prod, X.channel, X.score, X.region, X.@profile, X.@is_new, X.@proxy] AS txns;
+}
+
+CREATE OR REPLACE QUERY card_volume(VERTEX<BankCard> card, INT as_of) FOR GRAPH @G@ {
+  SumAccum<INT> @@n;
+  S = {card};
+  X = SELECT t FROM S:c -(MADE:e)-> Transaction:t WHERE e.ts <= as_of ACCUM @@n += 1;
+  PRINT @@n AS n;
+}
+
+CREATE OR REPLACE QUERY customer_cards(VERTEX<Customer> cust) FOR GRAPH @G@ {
+  S = {cust};
+  X = SELECT c FROM S:u -(OWNS)-> BankCard:c;
+  PRINT X[X.label, X.label_derived] AS cards;
+}
+
+// A card by the Cxxxxx-Kn label a source file gave it (derived labels are guesses and are not resolvable).
+CREATE OR REPLACE QUERY card_by_label(STRING lbl) FOR GRAPH @G@ {
+  S = {BankCard.*};
+  X = SELECT s FROM S:s WHERE s.label == lbl AND s.label_derived == false;
+  PRINT X[X.customer, X.label] AS cards;
+}
+
+// The shared-fingerprint query (the ring): everything known about a device profile as of as_of.
+// users, uses, New share, anonymous-proxy share, last use per card, and which cards a closed, confirmed case already blocked.
+CREATE OR REPLACE QUERY device_stats(VERTEX<DeviceProfile> prof, INT as_of, INT max_cards = 300) FOR GRAPH @G@ {
+  SumAccum<INT> @@txns, @@news, @@anon;
+  SetAccum<STRING> @@users, @@blocked_cards;
+  MapAccum<STRING, MaxAccum<INT>> @@last;
+  S = {prof};
+  X = SELECT t FROM S:d -(DEVICE_OF:e)-> Transaction:t WHERE e.ts <= as_of
+      ACCUM @@txns += 1,
+            CASE WHEN e.is_new == true THEN @@news += 1 END,
+            CASE WHEN e.proxy_kind == "IP_PROXY:ANONYMOUS" THEN @@anon += 1 END;
+  Y = SELECT c FROM X:t -(MADE_BY)-> BankCard:c ACCUM @@users += c.customer, @@last += (c.id -> t.ts);
+  Z = SELECT c FROM Y:c -(CARD_HAS_CLOSED)-> ClosedCase:k
+      WHERE k.closed_ts <= as_of AND k.outcome == "confirmed_fraud" AND k.actions LIKE "%BLOCK_CARD%"
+      ACCUM @@blocked_cards += c.id;
+  PRINT @@txns AS txns, @@news AS news, @@anon AS anon, @@users.size() AS users;
+  IF @@users.size() <= max_cards THEN
+    PRINT @@last AS last_by_card, @@blocked_cards AS blocked;
+  END;
+}
+
+// Closed cases (memory) visible at as_of, optionally by pattern and outcome. Closed history is causal: a case that closed after as_of is invisible.
+CREATE OR REPLACE QUERY closed_cases_by(INT as_of, STRING pat = "", STRING outc = "") FOR GRAPH @G@ {
+  S = {ClosedCase.*};
+  X = SELECT s FROM S:s WHERE s.closed_ts <= as_of AND (pat == "" OR s.pattern == pat) AND (outc == "" OR s.outcome == outc);
+  PRINT X[X.customer, X.card_label, X.outcome, X.pattern, X.opened_ts, X.closed_ts, X.exposure, X.notes, X.actions] AS cases;
+}
+
+// Memory by structure: closed cases whose first three transactions ran on one of these device profiles.
+CREATE OR REPLACE QUERY cases_on_devices(SET<VERTEX<DeviceProfile>> profiles, INT as_of, BOOL require_new = false) FOR GRAPH @G@ {
+  P = profiles;
+  X = SELECT t FROM P:d -(DEVICE_OF:e)-> Transaction:t WHERE e.ts <= as_of AND (require_new == false OR e.is_new == true);
+  C = SELECT k FROM X:t -(IN_CLOSED_CASE:e)-> ClosedCase:k WHERE k.closed_ts <= as_of AND e.seq < 3;
+  PRINT C[C.customer, C.card_label, C.outcome, C.pattern, C.opened_ts, C.closed_ts, C.exposure, C.notes, C.actions] AS cases;
+}
+
+CREATE OR REPLACE QUERY closed_case_exists(STRING cid) FOR GRAPH @G@ {
+  S = {ClosedCase.*};
+  X = SELECT s FROM S:s WHERE s.id == cid;
+  PRINT X.size() AS n;
+}
+
+CREATE OR REPLACE QUERY latest_ts() FOR GRAPH @G@ {
+  MaxAccum<INT> @@m;
+  S = {Transaction.*};
+  X = SELECT s FROM S:s ACCUM @@m += s.ts;
+  PRINT @@m AS latest;
+}
+
+// ---------------------------------------------------------------- graph analysis
+// Cards that share a device profile with this card (as of as_of), with the profiles and how many customers use each one.
+CREATE OR REPLACE QUERY connected_cards(VERTEX<BankCard> card, INT as_of, INT max_users = 200) FOR GRAPH @G@ {
+  SetAccum<STRING> @profiles;
+  SumAccum<INT> @users;
+  SetAccum<STRING> @custs;
+  S = {card};
+  T = SELECT t FROM S:c -(MADE:e)-> Transaction:t WHERE e.ts <= as_of;
+  P = SELECT p FROM T:t -(FROM_DEVICE:d)-> DeviceProfile:p WHERE d.ts <= as_of;
+  U = SELECT t FROM P:p -(DEVICE_OF:d)-> Transaction:t WHERE d.ts <= as_of ACCUM t.@profiles += p.id;
+  O = SELECT c FROM U:t -(MADE_BY)-> BankCard:c WHERE c != card ACCUM c.@profiles += t.@profiles;
+  PRINT O[O.label, O.label_derived, O.@profiles] AS cards;
+}
+
+// Score-blind contagion sweep: personalised PageRank from cards with a confirmed-fraud closed case (closed by as_of),
+// diffusing over card -> transaction -> device profile and back. A device profile passes on only a rarity-weighted share of
+// what reaches it (weight = 1 - ln(users)/ln(1000), floored at 0.1), so a generic phone shared by hundreds of customers is
+// noise and a rare, shared fingerprint stands out. Scores are degree-normalised (the share of a device's or card's own traffic that is
+// fraud-touched), otherwise raw mass just ranks the busiest devices. Independent of the bank score by construction.
+CREATE OR REPLACE QUERY contagion_sweep(INT as_of, INT iters = 6, DOUBLE damp = 0.85, INT top = 20, INT min_users = 5, INT max_users = 200) FOR GRAPH @G@ {
+  TYPEDEF TUPLE <STRING id, DOUBLE rank, STRING info> R;
+  SumAccum<DOUBLE> @rank, @seed, @in, @mass, @x, @y, @w;
+  SumAccum<INT> @deg;
+  SetAccum<STRING> @custs, @cust1;
+  OrAccum @isSeed;
+  SumAccum<INT> @@nseed;
+  HeapAccum<R>(top, rank DESC) @@cards, @@devices;
+
+  Seeds = SELECT c FROM ClosedCase:k -(CLOSED_ON_CARD)-> BankCard:c WHERE k.outcome == "confirmed_fraud" AND k.closed_ts <= as_of
+          ACCUM c.@isSeed += true
+          POST-ACCUM @@nseed += 1;
+  Cards = {BankCard.*};
+  Init = SELECT c FROM Cards:c WHERE c.@isSeed == true POST-ACCUM c.@seed = 1.0 / (@@nseed + 0.0000001), c.@rank = 1.0 / (@@nseed + 0.0000001);
+
+  Txns = {Transaction.*};
+  TD = SELECT t FROM Txns:t -(FROM_DEVICE:d)-> DeviceProfile:p WHERE d.ts <= as_of;
+  A0 = SELECT t FROM TD:t -(MADE_BY)-> BankCard:c ACCUM t.@cust1 += c.customer, c.@deg += 1;
+  P0 = SELECT p FROM TD:t -(FROM_DEVICE:d)-> DeviceProfile:p WHERE d.ts <= as_of ACCUM p.@custs += t.@cust1 POST-ACCUM p.@w = 1 - log(p.@custs.size() + 0.0) / log(1000.0), IF p.@w < 0.1 THEN p.@w = 0.1 END;
+  P1 = SELECT t FROM TD:t -(FROM_DEVICE:d)-> DeviceProfile:p WHERE d.ts <= as_of ACCUM p.@deg += 1;
+
+  Devs = {DeviceProfile.*};
+  WHILE TRUE LIMIT iters DO
+    A = SELECT t FROM TD:t -(MADE_BY)-> BankCard:c ACCUM t.@x = c.@rank / (c.@deg + 0.0);
+    Z1 = SELECT p FROM Devs:p POST-ACCUM p.@mass = 0;
+    B = SELECT p FROM TD:t -(FROM_DEVICE:d)-> DeviceProfile:p WHERE d.ts <= as_of ACCUM p.@mass += t.@x;
+    C = SELECT t FROM TD:t -(FROM_DEVICE:d)-> DeviceProfile:p WHERE d.ts <= as_of ACCUM t.@y = p.@mass * p.@w / (p.@deg + 0.0);
+    Z2 = SELECT c FROM Cards:c POST-ACCUM c.@in = 0;
+    D = SELECT c FROM TD:t -(MADE_BY)-> BankCard:c ACCUM c.@in += t.@y;
+    E = SELECT c FROM Cards:c POST-ACCUM c.@rank = damp * c.@in + (1 - damp) * c.@seed;
+  END;
+
+  Top1 = SELECT c FROM Cards:c WHERE c.@isSeed == false AND c.@rank > 0 AND c.@deg > 0 ACCUM @@cards += R(c.id, c.@rank / c.@deg, c.label);
+  Devs2 = SELECT p FROM Devs:p WHERE p.@mass > 0 AND p.@custs.size() >= min_users AND p.@custs.size() <= max_users ACCUM @@devices += R(p.id, p.@mass * p.@w / p.@deg, to_string(p.@custs.size()));
+  PRINT @@nseed AS seeds, @@cards AS top_cards, @@devices AS top_devices;
+}

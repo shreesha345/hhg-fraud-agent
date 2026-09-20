@@ -1,0 +1,178 @@
+{
+  "case_id": "HHG-006",
+  "case": {
+    "status": "escalated",
+    "verdict": "fraud",
+    "fraud_probability": 0.979,
+    "pattern": "undocumented",
+    "pattern_description": "Several online purchases in a short window, each just under a round authorization threshold, apparently chosen to avoid it. Found by testing the card's recent activity for clustering just below $500 and $1,000; it matches earlier closed structuring cases.",
+    "affected_txn_ids": [
+      "3476602",
+      "3476633",
+      "3476665",
+      "3476682"
+    ],
+    "first_suspicious_txn_id": "3476602",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "Trident/7.0 | Windows 7 | ie 11.0 for desktop | 1920x1080"
+    ],
+    "exposure_usd": 1906.07,
+    "evidence": [
+      {
+        "claim": "4 online purchases in 48 hours outside this card's own profile (amounts above its p95 of $320.95 or products it has not used)",
+        "source": "graph",
+        "ref": "signature:off_profile_burst",
+        "entity_ids": [
+          "3476602",
+          "3476633",
+          "3476665",
+          "3476682"
+        ]
+      },
+      {
+        "claim": "Device profile marked New for this account; 494 customer(s) have used this profile so far",
+        "source": "graph",
+        "ref": "signature:new_device(profile=Trident/7.0 | Windows 7 | ie 11.0 for desktop | 1920x1080)",
+        "entity_ids": [
+          "3476602",
+          "3476633",
+          "3476665",
+          "3476682"
+        ]
+      },
+      {
+        "claim": "4 online purchases within 30 minutes, each just under $500 ($478.95, $456.96, $488.04, $482.12): amounts chosen to stay under an authorization threshold",
+        "source": "graph",
+        "ref": "signature:threshold_hugging",
+        "entity_ids": [
+          "3476602",
+          "3476633",
+          "3476665",
+          "3476682"
+        ]
+      },
+      {
+        "claim": "Bank model scored the flagged transaction 0.25. Low, but confirmed fraud also scores low, so this barely lowers the odds",
+        "source": "graph",
+        "ref": "model:risk_score",
+        "entity_ids": [
+          "3476682"
+        ]
+      },
+      {
+        "claim": "Customer reports they did not make transaction 3476682",
+        "source": "graph",
+        "ref": "trigger:customer_report",
+        "entity_ids": [
+          "3476682"
+        ]
+      },
+      {
+        "claim": "Recalled 5 similar closed case(s): 5 confirmed fraud, 0 cleared",
+        "source": "graph",
+        "ref": "memory:recall(CC-5538,CC-5539,CC-5541,CC-5556,CC-5564)",
+        "entity_ids": [
+          "CC-5538",
+          "CC-5539",
+          "CC-5541",
+          "CC-5556",
+          "CC-5564"
+        ]
+      },
+      {
+        "claim": "Policy R9 governs this recommendation: R9. Undocumented patterns. When activity fits none of the known patterns but the evidence shows coordinated or repeated abuse across customers, recommend `CREATE_CASE`, `FILE_REPORT`, and `ESCALATE_TO_ANALYST`, and describe the pa",
+        "source": "document",
+        "ref": "document:policy:R9",
+        "entity_ids": [
+          "3476682"
+        ]
+      },
+      {
+        "claim": "Policy R2 governs this recommendation: R2. Customer denies the transaction. Recommend `BLOCK_CARD` and `CREATE_CASE`. Add `FILE_REPORT` if exposure exceeds $1,000 or the case connects to a shared device profile or another card's fraud.",
+        "source": "document",
+        "ref": "document:policy:R2",
+        "entity_ids": [
+          "3476682"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-5538",
+      "CC-5539",
+      "CC-5541",
+      "CC-5556",
+      "CC-5564"
+    ],
+    "summary": "Customer C07297 reported fraud regarding transaction 3476682, leading to a total exposure of $1906.07. Four online purchases were made within 30 minutes on 2016-11-21, with each amount staying just under a $500 authorization threshold. These transactions were conducted via a new device profile shared by 494 other customers and exceeded the card's p95 of $320.95.",
+    "written_to_graph": true,
+    "graph_case_id": "FC-HHG-006"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "L1",
+        "reason": "R2: the customer reports they did not make the transaction"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "R2: the customer reports they did not make the transaction; R9: activity fits no documented pattern but shows coordinated or repeated abuse"
+      },
+      {
+        "action": "ESCALATE_TO_ANALYST",
+        "route": "auto",
+        "reason": "R9: undocumented pattern needs an analyst to name it"
+      },
+      {
+        "action": "FILE_REPORT",
+        "route": "L2",
+        "reason": "R2: exposure $1906.07 exceeds $1,000; R9: undocumented coordinated abuse warrants a report"
+      }
+    ],
+    "final": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "L1",
+        "reason": "R2: the customer reports they did not make the transaction"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "R2: the customer reports they did not make the transaction; R9: activity fits no documented pattern but shows coordinated or repeated abuse"
+      },
+      {
+        "action": "ESCALATE_TO_ANALYST",
+        "route": "auto",
+        "reason": "R9: undocumented pattern needs an analyst to name it"
+      },
+      {
+        "action": "FILE_REPORT",
+        "route": "L2",
+        "reason": "R2: exposure $1906.07 exceeds $1,000; R9: undocumented coordinated abuse warrants a report"
+      }
+    ],
+    "what_changed": "nothing"
+  },
+  "sar": {
+    "file": true,
+    "reason": "R2, R9: fraud confirmed or strongly suspected and a reporting condition holds (exposure $1906.07, undocumented pattern)",
+    "narrative": "Customer C07297 reported that they did not authorize transaction 3476682, triggering a fraud investigation into card C07297-K1. On 2016-11-21, four online purchases were made within a 30-minute window: 3476602 ($478.95), 3476633 ($456.96), 3476665 ($488.04), and 3476682 ($482.12). These transactions occurred via a device profile identified as Trident/7.0 | Windows 7 | ie 11.0 for desktop | 1920x1080, which is new to this account and has been used by 494 other customers. The activity is suspicious because each transaction was kept just under a $500 authorization threshold to avoid detection, a pattern known as threshold hugging. Additionally, these amounts exceed the customer's typical p95 spending profile of $320.95. This behavior matches five previously closed fraud cases, including CC-5538, CC-5539, CC-5541, CC-5556, and CC-5564. The total exposure for this activity is $1906.07.",
+    "subjects": [
+      "C07297",
+      "C07297-K1",
+      "Trident/7.0 | Windows 7 | ie 11.0 for desktop | 1920x1080"
+    ],
+    "total_amount_usd": 1906.07,
+    "activity_dates": [
+      "2016-11-21",
+      "2016-11-21"
+    ]
+  },
+  "stop_reason": "Probability 0.98 is at or above 0.85 and supported by 3 independent evidence classes (card_behaviour, customer_reply, memory), so a defensible action exists and further steps would not change it.",
+  "tool_calls": 38,
+  "tokens": 7468,
+  "latency_s": 13.925
+}

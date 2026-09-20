@@ -1,0 +1,55 @@
+{
+  "version": "baseline_v0",
+  "note": "Estimated within the score>=0.8 zone (only place both outcomes exist). Fitted on cases opened before 2016-10-01. Shrunk by 0.5, capped at log(5). Prior is applied separately by the judge.",
+  "zone": "risk_score >= 0.8",
+  "signals": {
+    "new_device": {
+      "p_given_fraud": 0.2092,
+      "p_given_cleared": 0.8562,
+      "log_lr_present": -0.7046,
+      "log_lr_absent": 0.8523,
+      "n_fraud": 519,
+      "n_cleared": 756
+    },
+    "proxy": {
+      "p_given_fraud": 0.0537,
+      "p_given_cleared": 0.0752,
+      "log_lr_present": -0.168,
+      "log_lr_absent": 0.0115,
+      "n_fraud": 519,
+      "n_cleared": 756
+    },
+    "device_unseen_by_card": {
+      "p_given_fraud": 0.3685,
+      "p_given_cleared": 0.7533,
+      "log_lr_present": -0.3575,
+      "log_lr_absent": 0.4699,
+      "n_fraud": 519,
+      "n_cleared": 756
+    },
+    "new_region": {
+      "p_given_fraud": 0.1612,
+      "p_given_cleared": 0.4934,
+      "log_lr_present": -0.5593,
+      "log_lr_absent": 0.2521,
+      "n_fraud": 519,
+      "n_cleared": 756
+    },
+    "new_product": {
+      "p_given_fraud": 0.1056,
+      "p_given_cleared": 0.2269,
+      "log_lr_present": -0.3826,
+      "log_lr_absent": 0.0729,
+      "n_fraud": 519,
+      "n_cleared": 756
+    },
+    "amount_over_p95": {
+      "p_given_fraud": 0.2111,
+      "p_given_cleared": 0.3311,
+      "log_lr_present": -0.225,
+      "log_lr_absent": 0.0825,
+      "n_fraud": 519,
+      "n_cleared": 756
+    }
+  }
+}

@@ -1,0 +1,38 @@
+USE GRAPH @G@
+
+// GraphRAG retrieval. Vector search finds passages by meaning; the graph then says how they connect (cards, devices, patterns).
+// Closed cases are causal: a case that had not closed by as_of is dropped after the search.
+CREATE OR REPLACE QUERY rag_closed_cases(LIST<FLOAT> qv, INT as_of, INT k = 8) FOR GRAPH @G@ {
+  MapAccum<VERTEX, FLOAT> @@dist;
+  Hits = vectorSearch({ClosedCase.emb}, qv, k * 4, {distance_map: @@dist});
+  Vis = SELECT h FROM Hits:h WHERE h.closed_ts <= as_of;
+  PRINT Vis[Vis.customer, Vis.card_label, Vis.outcome, Vis.pattern, Vis.closed_ts, Vis.exposure, Vis.notes] AS cases;
+  PRINT @@dist AS distance;
+}
+
+CREATE OR REPLACE QUERY rag_policy(LIST<FLOAT> qv, INT k = 5) FOR GRAPH @G@ {
+  MapAccum<VERTEX, FLOAT> @@dist;
+  Hits = vectorSearch({PolicyChunk.emb}, qv, k, {distance_map: @@dist});
+  PRINT Hits[Hits.title, Hits.doc, Hits.text] AS chunks;
+  PRINT @@dist AS distance;
+}
+
+// Graph expansion for retrieved closed cases: their cards, how many transactions they involve, and the device profiles those ran on.
+CREATE OR REPLACE QUERY rag_expand(SET<VERTEX<ClosedCase>> cs) FOR GRAPH @G@ {
+  SetAccum<STRING> @cards, @ks;
+  SumAccum<INT> @ntx;
+  MapAccum<STRING, SetAccum<STRING>> @@devs;
+  S = cs;
+  A = SELECT k FROM S:k -(CLOSED_ON_CARD)-> BankCard:c ACCUM k.@cards += c.label;
+  B = SELECT k FROM S:k -(CLOSED_CONNECTED)-> BankCard:c ACCUM k.@cards += c.label;
+  T = SELECT t FROM S:k -(CLOSED_INVOLVES)-> Transaction:t ACCUM t.@ks += k.id, k.@ntx += 1;
+  D = SELECT p FROM T:t -(FROM_DEVICE)-> DeviceProfile:p ACCUM FOREACH kk IN t.@ks DO @@devs += (kk -> p.id) END;
+  PRINT S[S.@cards, S.@ntx] AS expansion;
+  PRINT @@devs AS devices;
+}
+
+// Exact policy chunks by id (the rule text a recommendation cites).
+CREATE OR REPLACE QUERY rag_policy_by_id(SET<VERTEX<PolicyChunk>> ids) FOR GRAPH @G@ {
+  S = ids;
+  PRINT S[S.title, S.doc, S.text] AS chunks;
+}

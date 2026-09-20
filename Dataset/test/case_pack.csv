@@ -1,0 +1,9 @@
+case_id,opened_at,trigger_type,trigger_text,flagged_txn_id,card_id,customer_id,risk_score
+TST-001,2016-12-05 03:15:00,risk_score,"Real-time model scored transaction 9003886 ($259.98, online) at 0.62. Review and decide.",9003886,T9001-K1,T9001,0.62
+TST-002,2016-11-22 02:30:00,customer_report,Customer T9002 message: 'I never made this $482.12 purchase. Please check my card.' Refers to 9003945.,9003945,T9002-K1,T9002,
+TST-003,2016-11-22 20:11:00,analyst_request,Analyst request: several cards this month show purchases from the same unusual device profile. Review transaction 9003992 on card T9003-K1 and look for related activity.,9003992,T9003-K1,T9003,
+TST-004,2016-11-27 12:00:00,risk_score,"Real-time model scored transaction 9004070 ($84.00, in billing region 555.0) at 0.91. Review and decide.",9004070,T9004-K1,T9004,0.91
+TST-005,2016-12-03 15:00:00,customer_report,Customer T9005 message: 'I never made this $39.08 purchase. Please check my card.' Refers to 9004146.,9004146,T9005-K1,T9005,
+TST-006,2016-11-24 21:00:00,risk_score,"Real-time model scored transaction 9004208 ($96.50, online) at 0.88. Review and decide.",9004208,T9006-K1,T9006,0.88
+TST-007,2016-12-01 17:00:00,risk_score,"Real-time model scored transaction 9004289 ($220.00, in billing region 777.0) at 0.57. Review and decide.",9004289,T9007-K1,T9007,0.57
+TST-008,2016-12-08 14:30:00,risk_score,"Real-time model scored transaction 9004354 ($180.00, online) at 0.55. Review and decide.",9004354,T9008-K1,T9008,0.55

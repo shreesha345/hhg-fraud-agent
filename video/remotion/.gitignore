@@ -1,0 +1,8 @@
+node_modules
+
+# Rendered output, the real browser screenshots and the narration clips ARE committed:
+# they are the evidence that the demo footage is a real run, and they let anyone
+# re-render the video without a TigerGraph workspace, an Ollama model or a TTS key.
+# Scratch renders are not.
+out/stills/
+out/check-*.png

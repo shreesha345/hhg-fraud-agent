@@ -1,0 +1,110 @@
+{
+  "case_id": "HHG-018",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.665,
+    "pattern": "card_not_present_new_device",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3487659",
+      "3489428",
+      "3491361"
+    ],
+    "first_suspicious_txn_id": "3487659",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "MacOS | Mac OS X 10_13_4 | safari generic | 1440x900"
+    ],
+    "exposure_usd": 189.14,
+    "evidence": [
+      {
+        "claim": "Device profile marked New for this account; 15 customer(s) have used this profile so far",
+        "source": "graph",
+        "ref": "signature:new_device(profile=MacOS | Mac OS X 10_13_4 | safari generic | 1440x900)",
+        "entity_ids": [
+          "3487659",
+          "3489428"
+        ]
+      },
+      {
+        "claim": "Customer reports they did not make transaction 3491361",
+        "source": "graph",
+        "ref": "trigger:customer_report",
+        "entity_ids": [
+          "3491361"
+        ]
+      },
+      {
+        "claim": "Recalled 5 similar closed case(s): 2 confirmed fraud, 3 cleared",
+        "source": "graph",
+        "ref": "memory:recall(CC-4004,CC-4199,CC-4699,CC-5111,CC-5254)",
+        "entity_ids": [
+          "CC-4004",
+          "CC-4199",
+          "CC-4699",
+          "CC-5111",
+          "CC-5254"
+        ]
+      },
+      {
+        "claim": "Policy R2 governs this recommendation: R2. Customer denies the transaction. Recommend `BLOCK_CARD` and `CREATE_CASE`. Add `FILE_REPORT` if exposure exceeds $1,000 or the case connects to a shared device profile or another card's fraud.",
+        "source": "document",
+        "ref": "document:policy:R2",
+        "entity_ids": [
+          "3491361"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-4004",
+      "CC-4199",
+      "CC-4699",
+      "CC-5111",
+      "CC-5254"
+    ],
+    "summary": "Customer C02354 reported they did not make transaction 3491361, resulting in a total exposure of 189.14 across three transactions. Two online transactions were linked to a new device profile used by 15 different customers. Based on policy R2, the recommended actions are to block the card and create a case.",
+    "written_to_graph": true,
+    "graph_case_id": "FC-HHG-018"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "L1",
+        "reason": "R2: the customer reports they did not make the transaction"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "R2: the customer reports they did not make the transaction"
+      }
+    ],
+    "final": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "L1",
+        "reason": "R2: the customer reports they did not make the transaction"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "R2: the customer reports they did not make the transaction"
+      }
+    ],
+    "what_changed": "nothing"
+  },
+  "sar": {
+    "file": false,
+    "reason": "No reporting condition holds (exposure at or under $1,000, no shared device, pattern not undocumented).",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 0,
+    "activity_dates": []
+  },
+  "stop_reason": "Not enough independent evidence and no further permitted evidence request; escalating under R8. Open: Only 1 independent evidence class support the leading hypothesis (need 2); The customer has not been asked about this transaction; Card looks like an aggregate customer; baselines are weak.",
+  "tool_calls": 38,
+  "tokens": 1478,
+  "latency_s": 12.747
+}

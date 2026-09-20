@@ -1,0 +1,28 @@
+USE GRAPH @G@
+CREATE LOADING JOB @G@_load FOR GRAPH @G@ {
+  DEFINE FILENAME v_customer; DEFINE FILENAME v_card; DEFINE FILENAME v_transaction; DEFINE FILENAME v_device;
+  DEFINE FILENAME v_region; DEFINE FILENAME v_email; DEFINE FILENAME v_pattern; DEFINE FILENAME v_closedcase;
+  DEFINE FILENAME e_owns; DEFINE FILENAME e_made; DEFINE FILENAME e_next; DEFINE FILENAME e_from_device;
+  DEFINE FILENAME e_billed_in; DEFINE FILENAME e_purchaser_email; DEFINE FILENAME e_closed_involves;
+  DEFINE FILENAME e_closed_on_card; DEFINE FILENAME e_closed_connected; DEFINE FILENAME e_closed_matches;
+
+  LOAD v_customer TO VERTEX Customer VALUES ($0) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD v_card TO VERTEX BankCard VALUES ($0, $1, $2, $3, $4, $5) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD v_transaction TO VERTEX Transaction VALUES ($0, $1, $2, $3, $4, $5, $6) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD v_device TO VERTEX DeviceProfile VALUES ($0, $1) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD v_region TO VERTEX BillingRegion VALUES ($0) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD v_email TO VERTEX EmailDomain VALUES ($0) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD v_pattern TO VERTEX Pattern VALUES ($0) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD v_closedcase TO VERTEX ClosedCase VALUES ($0, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+
+  LOAD e_owns TO EDGE OWNS VALUES ($0, $1) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD e_made TO EDGE MADE VALUES ($0, $1, $2) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD e_next TO EDGE NEXT VALUES ($0, $1) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD e_from_device TO EDGE FROM_DEVICE VALUES ($0, $1, $2, $3, $4) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD e_billed_in TO EDGE BILLED_IN VALUES ($0, $1, $2) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD e_purchaser_email TO EDGE PURCHASER_EMAIL VALUES ($0, $1, $2) USING SEPARATOR="\t", HEADER="false", EOL="\n";
+  LOAD e_closed_involves TO EDGE CLOSED_INVOLVES VALUES ($0, $1, $2) USING SEPARATOR="\t", HEADER="false", EOL="\n", vertex_must_exist="true";
+  LOAD e_closed_on_card TO EDGE CLOSED_ON_CARD VALUES ($0, $1) USING SEPARATOR="\t", HEADER="false", EOL="\n", vertex_must_exist="true";
+  LOAD e_closed_connected TO EDGE CLOSED_CONNECTED VALUES ($0, $1) USING SEPARATOR="\t", HEADER="false", EOL="\n", vertex_must_exist="true";
+  LOAD e_closed_matches TO EDGE CLOSED_MATCHES VALUES ($0, $1) USING SEPARATOR="\t", HEADER="false", EOL="\n", vertex_must_exist="true";
+}

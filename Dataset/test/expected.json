@@ -1,0 +1,195 @@
+{
+  "TST-001": {
+    "pattern": "card_testing",
+    "verdict": "fraud",
+    "affected": [
+      9003882,
+      9003883,
+      9003884,
+      9003885,
+      9003886
+    ],
+    "exposure": 267.63,
+    "initial_has": [
+      "DECLINE_TRANSACTION",
+      "STEP_UP_AUTH"
+    ],
+    "final_has": [
+      "BLOCK_CARD"
+    ],
+    "final_hasnt": [
+      "BLOCK_ALL_CARDS"
+    ],
+    "why": "R5: three or more small online auths within an hour then a larger purchase; a purchase over $100 cleared so block"
+  },
+  "TST-002": {
+    "pattern": "undocumented",
+    "verdict": "fraud",
+    "affected": [
+      9003942,
+      9003943,
+      9003944,
+      9003945
+    ],
+    "exposure": 1906.07,
+    "initial_has": [
+      "CREATE_CASE",
+      "BLOCK_CARD",
+      "FILE_REPORT",
+      "ESCALATE_TO_ANALYST"
+    ],
+    "final_has": [
+      "CREATE_CASE",
+      "BLOCK_CARD",
+      "FILE_REPORT"
+    ],
+    "routes": {
+      "BLOCK_CARD": "L1",
+      "FILE_REPORT": "L2"
+    },
+    "why": "R2 (customer denies) plus R9 (undocumented threshold structuring); exposure 1906.07 > 1000 so report, <= 2500 so L1 block"
+  },
+  "TST-003": {
+    "pattern": "undocumented",
+    "verdict": "fraud",
+    "connected_cards_include": [
+      "T9101-K1",
+      "T9102-K1",
+      "T9103-K1"
+    ],
+    "connected_cards_exclude": [
+      "T9112-K1",
+      "T9107-K1",
+      "T9108-K1",
+      "T9109-K1",
+      "T9110-K1",
+      "T9111-K1"
+    ],
+    "initial_has": [
+      "CREATE_CASE",
+      "FILE_REPORT",
+      "ESCALATE_TO_ANALYST",
+      "MONITOR_CONNECTED_CARDS"
+    ],
+    "final_has": [
+      "CREATE_CASE",
+      "FILE_REPORT"
+    ],
+    "why": "R6 and R9: rare fingerprint (New, anonymous proxy) shared by many cards, bank score irrelevant. Decision 2026-09-20: only card labels a source file names may be emitted (made-up IDs score zero), so live members whose K label is only inferred (T9107-T9111) are NOT named; already-closed members that have real labels are."
+  },
+  "TST-004": {
+    "pattern": "none",
+    "verdict_in": [
+      "legitimate",
+      "uncertain"
+    ],
+    "final_has": [
+      "CLOSE_NO_FRAUD"
+    ],
+    "final_hasnt": [
+      "BLOCK_CARD",
+      "BLOCK_ALL_CARDS",
+      "FILE_REPORT",
+      "DECLINE_TRANSACTION"
+    ],
+    "initial_hasnt": [
+      "BLOCK_CARD",
+      "FILE_REPORT"
+    ],
+    "why": "score 0.91 is the false-alarm zone; consecutive days in the new region with home activity stopped is a trip, not a clone"
+  },
+  "TST-005": {
+    "pattern": "none",
+    "verdict_in": [
+      "legitimate",
+      "uncertain"
+    ],
+    "initial_has": [
+      "CREATE_CASE",
+      "VERIFY_WITH_CUSTOMER",
+      "WARN_CUSTOMER"
+    ],
+    "final_has": [
+      "CREATE_CASE",
+      "VERIFY_WITH_CUSTOMER",
+      "WARN_CUSTOMER"
+    ],
+    "final_hasnt": [
+      "BLOCK_CARD",
+      "FILE_REPORT"
+    ],
+    "initial_hasnt": [
+      "BLOCK_CARD"
+    ],
+    "why": "R7: the disputed charge repeats monthly at the same amount; verify and warn, never block. No customer reply is invented, so the case is not closed on an assumed confirmation."
+  },
+  "TST-006": {
+    "pattern": "none",
+    "verdict_in": [
+      "legitimate",
+      "uncertain"
+    ],
+    "final_has": [
+      "CLOSE_NO_FRAUD"
+    ],
+    "final_hasnt": [
+      "BLOCK_CARD",
+      "FILE_REPORT",
+      "DECLINE_TRANSACTION"
+    ],
+    "initial_hasnt": [
+      "BLOCK_CARD",
+      "FILE_REPORT"
+    ],
+    "why": "new device replaces the old one for the same card (same brand, OS family), not shared with other cards, amount within profile"
+  },
+  "TST-007": {
+    "pattern": "out_of_region_use",
+    "verdict_in": [
+      "fraud",
+      "uncertain"
+    ],
+    "affected_include": [
+      9004289
+    ],
+    "initial_has": [
+      "VERIFY_WITH_CUSTOMER"
+    ],
+    "initial_hasnt": [
+      "BLOCK_CARD",
+      "BLOCK_ALL_CARDS"
+    ],
+    "final_has": [
+      "MONITOR_CARD",
+      "DECLINE_TRANSACTION",
+      "CREATE_CASE"
+    ],
+    "why": "R1: one signal and p below 0.70 so verify before any block. No customer reply is available and none is invented, so R4 (no reply) applies: monitor and decline pending, never block on one signal.",
+    "final_hasnt": [
+      "BLOCK_CARD",
+      "BLOCK_ALL_CARDS"
+    ]
+  },
+  "TST-008": {
+    "pattern_in": [
+      "card_not_present_fraud",
+      "card_not_present_new_device"
+    ],
+    "verdict_in": [
+      "fraud",
+      "uncertain"
+    ],
+    "affected_include": [
+      9004352,
+      9004353,
+      9004354
+    ],
+    "initial_hasnt": [
+      "BLOCK_ALL_CARDS"
+    ],
+    "final_hasnt": [
+      "BLOCK_ALL_CARDS"
+    ],
+    "why": "three off-profile online purchases in six hours from a device marked New that no other card uses"
+  }
+}
