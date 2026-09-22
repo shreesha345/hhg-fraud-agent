@@ -100,6 +100,7 @@ export const CasePart = z.object({
   evidence: z.array(EvidenceItem),
   similar_prior_cases: z.array(z.string()),
   summary: z.string().min(1),
+  customer_explanation: z.string().optional(), // NEW: Simple language explanation for customers
   written_to_graph: z.boolean(),
   graph_case_id: z.string(),
 });

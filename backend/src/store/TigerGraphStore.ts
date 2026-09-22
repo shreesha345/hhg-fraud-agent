@@ -19,6 +19,8 @@ export interface TigerGraphOptions {
   /** command that starts the MCP server; the default runs py/scripts/tg_mcp_launcher.py, which fetches a fresh JWT from TG_SECRET */
   command?: string;
   args?: string[];
+  /** Python executable to use; defaults to py/.venv/Scripts/python.exe on Windows */
+  pythonExe?: string;
 }
 
 type Json = Record<string, unknown>;
@@ -54,10 +56,17 @@ export class TigerGraphStore implements GraphStore {
     if (this.connecting) return this.connecting;
     this.connecting = (async () => {
       await this.client?.close().catch(() => undefined);
+      // Use Python directly from .venv to avoid "uv run" dependency installation on every launch
+      const defaultPython = process.platform === "win32" ? "py\\.venv\\Scripts\\python.exe" : "py/.venv/bin/python";
+      const python = this.opts.pythonExe ?? defaultPython;
       const transport = new StdioClientTransport({
-        command: this.opts.command ?? "uv",
-        args: this.opts.args ?? ["run", "--project", "py", "python", "py/scripts/tg_mcp_launcher.py", this.opts.graph],
-        cwd: ROOT, stderr: "ignore",
+        command: this.opts.command ?? python,
+        args: this.opts.args ?? ["py/scripts/tg_mcp_launcher.py", this.opts.graph],
+        cwd: ROOT, stderr: "pipe",
+      });
+      // Listen for stderr to diagnose connection issues
+      transport.stderr?.on('data', (data) => {
+        console.error('[TigerGraph MCP stderr]:', data.toString());
       });
       const c = new Client({ name: "fraud-agent", version: "0.1.0" });
       await c.connect(transport);

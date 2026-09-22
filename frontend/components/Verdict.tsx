@@ -1,6 +1,7 @@
 "use client";
 import type { InvestigationResult } from "@fraud/shared";
 import { PATTERN_PLAIN, VERDICT_PLAIN, VERDICT_SENTENCE, howSure, plainClass } from "@fraud/shared";
+import { CustomerExplanation } from "./CustomerExplanation";
 
 const cls = (v: string) => (v === "fraud" ? "t-bad" : v === "legitimate" ? "t-ok" : "t-gate");
 
@@ -31,6 +32,18 @@ export function Verdict({ r }: { r: InvestigationResult }) {
       </div>
       <p style={{ margin: 0 }}>{VERDICT_SENTENCE[c.verdict]} <b>{PATTERN_PLAIN[c.pattern] ?? c.pattern}.</b></p>
       {c.exposure_usd > 0 && <p style={{ margin: 0 }}>Money at risk: <b>${c.exposure_usd.toFixed(2)}</b> across {c.affected_txn_ids.length} payment{c.affected_txn_ids.length === 1 ? "" : "s"}.</p>}
+      
+      {/* Customer-friendly explanation */}
+      {c.customer_explanation && (
+        <div style={{ marginTop: 12 }}>
+          <CustomerExplanation 
+            explanation={c.customer_explanation} 
+            verdict={c.verdict}
+            pattern={c.pattern}
+          />
+        </div>
+      )}
+      
       <div className="summary">
         <div className="label">Summary written by {r.trace.narrator.model ? `the AI (${r.trace.narrator.model})` : "a fixed template"}{r.trace.narrator.fell_back ? " — the AI's answer was not usable, so a template was used" : ""}</div>
         <p style={{ margin: "4px 0 0" }}>{c.summary}</p>

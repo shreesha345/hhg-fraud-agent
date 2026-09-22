@@ -43,8 +43,8 @@ export function Sar({ r }: { r: InvestigationResult }) {
           <div className="sar">{s.narrative}</div>
           <div className="chips">
             <span className="chip">${s.total_amount_usd.toFixed(2)}</span>
-            {s.activity_dates.map((d) => <span key={d} className="chip">{d}</span>)}
-            {s.subjects.map((x) => <span key={x} className="chip">{x}</span>)}
+            {s.activity_dates.map((d, i) => <span key={`date-${i}-${d}`} className="chip">{d}</span>)}
+            {s.subjects.map((x, i) => <span key={`subject-${i}-${x}`} className="chip">{x}</span>)}
           </div>
         </>
       )}

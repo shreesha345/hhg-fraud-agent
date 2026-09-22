@@ -254,6 +254,19 @@ export async function investigate(store: GraphStore, pack: PackCase, opts: Inves
   await emit("explain", "Wrote the summary", ex.text);
   let sarText = "", sarTokens = 0;
   if (fileReport) { const s = await opts.narrator.sar(brief); sarText = s.text; sarTokens = s.tokens; await emit("sar", "Wrote the regulator report", sarText); }
+  
+  // NEW: Generate customer-friendly explanation
+  let customerExplanation = "";
+  let customerTokens = 0;
+  try {
+    const custEx = await opts.narrator.explainToCustomer(brief);
+    customerExplanation = custEx.text;
+    customerTokens = custEx.tokens;
+    await emit("explain", "Wrote customer-friendly explanation", customerExplanation);
+  } catch (e) {
+    // Customer explanation is optional - don't fail the case if it errors
+    await emit("explain", "Could not generate customer explanation", `${(e as Error).message}`);
+  }
 
   const answer: AnswerFile = {
     case_id: pack.caseId,
@@ -261,7 +274,7 @@ export async function investigate(store: GraphStore, pack: PackCase, opts: Inves
       status, verdict, fraud_probability: assess0.p, pattern, pattern_description: patternDescription,
       affected_txn_ids: caseGeom.affected, first_suspicious_txn_id: verdict === "legitimate" ? "" : (first?.id ?? ""),
       connected_card_ids: connectedCards, connected_device_profiles: devices, exposure_usd: caseGeom.exposure, evidence,
-      similar_prior_cases: similar, summary: ex.text, written_to_graph: false, graph_case_id: "",
+      similar_prior_cases: similar, summary: ex.text, customer_explanation: customerExplanation || undefined, written_to_graph: false, graph_case_id: "",
     },
     evidence_requests: requests,
     next_best_actions: { initial, final, what_changed: whatChanged, contingency: contingencyTable },
@@ -269,7 +282,7 @@ export async function investigate(store: GraphStore, pack: PackCase, opts: Inves
       ? { file: true, reason: `${finalRules.filter((r) => ["R2", "R6", "R9"].includes(r)).join(", ") || "Policy 3a"}: fraud confirmed or strongly suspected and a reporting condition holds (exposure $${caseGeom.exposure.toFixed(2)}${shared.fired ? ", shared device profile" : ""}${pattern === "undocumented" ? ", undocumented pattern" : ""})`, narrative: sarText, subjects, total_amount_usd: caseGeom.exposure, activity_dates: [...dates] }
       : { file: false, reason: verdict === "legitimate" ? "No fraud suspected, so no report is required." : "No reporting condition holds (exposure at or under $1,000, no shared device, pattern not undocumented).", narrative: "", subjects: [], total_amount_usd: 0, activity_dates: [] },
     stop_reason: stopReason,
-    tool_calls: 0, tokens: ex.tokens + sarTokens, latency_s: 0,
+    tool_calls: 0, tokens: ex.tokens + sarTokens + customerTokens, latency_s: 0,
   };
 
   if (opts.writeToGraph && store.writeCase) {

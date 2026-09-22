@@ -44,6 +44,8 @@ export interface Narrator {
   readonly model?: string;
   explain(b: Brief): Promise<NarrationResult>;
   sar(b: Brief): Promise<NarrationResult>;
+  /** NEW: customer-friendly explanation in simple language */
+  explainToCustomer(b: Brief): Promise<NarrationResult>;
   /** calls made since the last time this was read (for the "who talked to whom" view) */
   takeLog?(): Comm[];
 }
@@ -75,6 +77,17 @@ export function checkSar(text: string, b: Brief): string | null {
   return null;
 }
 
+export function checkCustomerExplain(text: string, b: Brief): string | null {
+  const n = sentences(text).length;
+  if (n < 2 || n > 4) return `customer explanation must be 2 to 4 sentences, got ${n}`;
+  const allowed = nums(JSON.stringify(b));
+  for (const x of nums(text)) if (!allowed.has(x)) return `number ${x} is not in the brief`;
+  // Must avoid technical jargon
+  const jargon = /log.?odds|signature|prosecution|defence|ledger|p95|idf|pagerank/i;
+  if (jargon.test(text)) return `customer explanation contains technical jargon`;
+  return null;
+}
+
 // ------------------------------------------------------------------ local Ollama
 /** Models differ: some honour Ollama's structured output, others (the cloud ones) wrap the JSON in a markdown fence or add a sentence around it. */
 export function extractJson(text: string): unknown {
@@ -96,7 +109,7 @@ export class OllamaNarrator implements Narrator {
   get model(): string { return this.o.model; }
   takeLog(): Comm[] { const l = this.log; this.log = []; return l; }
 
-  private async ask(system: string, user: string, key: "summary" | "narrative"): Promise<{ text: string; tokens: number }> {
+  private async ask(system: string, user: string, key: "summary" | "narrative" | "customer_explanation"): Promise<{ text: string; tokens: number }> {
     const f = this.o.fetchImpl ?? fetch;
     const res = await f(`${this.o.host}/api/chat`, {
       method: "POST",
@@ -114,35 +127,38 @@ export class OllamaNarrator implements Narrator {
     return { text: parsed[key], tokens: (j.prompt_eval_count ?? 0) + (j.eval_count ?? 0) };
   }
 
-  private async run(kind: "explain" | "sar", b: Brief): Promise<NarrationResult> {
-    const key = kind === "explain" ? "summary" : "narrative";
-    const check = kind === "explain" ? checkExplain : checkSar;
+  private async run(kind: "explain" | "sar" | "customer", b: Brief): Promise<NarrationResult> {
+    const key = kind === "explain" ? "summary" : kind === "sar" ? "narrative" : "customer_explanation";
+    const check = kind === "explain" ? checkExplain : kind === "sar" ? checkSar : checkCustomerExplain;
     const system = kind === "explain"
       ? "You write a 2 to 6 sentence case summary for a fraud analyst. Use ONLY the facts in the JSON brief. Do not invent numbers, IDs or actions. Return JSON {\"summary\": string}."
-      : "You write a suspicious activity report narrative of 6 to 12 sentences answering who, what, when, where, how and why it is suspicious. Use ONLY the facts in the JSON brief; mention each subject ID. Do not invent numbers or IDs. Return JSON {\"narrative\": string}.";
+      : kind === "sar"
+      ? "You write a suspicious activity report narrative of 6 to 12 sentences answering who, what, when, where, how and why it is suspicious. Use ONLY the facts in the JSON brief; mention each subject ID. Do not invent numbers or IDs. Return JSON {\"narrative\": string}."
+      : "You explain in 2 to 4 simple sentences why we're reviewing this transaction. Use plain language a customer can understand - avoid technical terms. Focus on what happened and what we're doing about it. Use ONLY the facts in the JSON brief. Return JSON {\"customer_explanation\": string}.";
     let tokens = 0, feedback = "", lastProblem = "";
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
         const t0 = performance.now();
         const r = await this.ask(system, JSON.stringify(b) + feedback, key);
         tokens += r.tokens;
-        this.log.push({ from: "Agent", to: `Ollama · ${this.o.model}`, what: kind === "explain" ? "write the summary" : "write the regulator report", ms: Math.round(performance.now() - t0), ok: true });
+        this.log.push({ from: "Agent", to: `Ollama · ${this.o.model}`, what: kind === "explain" ? "write the summary" : kind === "sar" ? "write the regulator report" : "write customer explanation", ms: Math.round(performance.now() - t0), ok: true });
         const problem = check(r.text, b);
         if (!problem) return { text: r.text, tokens, fellBack: false, model: this.o.model };
         lastProblem = `rejected: ${problem}`;
         feedback = `\n\nYour previous answer was rejected: ${problem}. Fix it and answer again.`;
       } catch (e) {
-        this.log.push({ from: "Agent", to: `Ollama · ${this.o.model}`, what: `${kind === "explain" ? "write the summary" : "write the regulator report"} (failed: ${(e as Error).message.slice(0, 60)})`, ms: 0, ok: false });
+        this.log.push({ from: "Agent", to: `Ollama · ${this.o.model}`, what: `${kind === "explain" ? "write the summary" : kind === "sar" ? "write the regulator report" : "write customer explanation"} (failed: ${(e as Error).message.slice(0, 60)})`, ms: 0, ok: false });
         lastProblem = (e as Error).message;
         feedback = `\n\nYour previous answer could not be used (${(e as Error).message}). Return valid JSON.`;
       }
     }
-    throw new NarratorError(`The AI model (${this.o.model}) could not write the ${kind === "explain" ? "summary" : "regulator report"} after 3 tries: ${lastProblem}. ` +
+    throw new NarratorError(`The AI model (${this.o.model}) could not write the ${kind === "explain" ? "summary" : kind === "sar" ? "regulator report" : "customer explanation"} after 3 tries: ${lastProblem}. ` +
       "Check that Ollama is running and that LLM_MODEL_OLLAMA in .env names a model you can use. Nothing was written in its place.");
   }
 
   explain(b: Brief): Promise<NarrationResult> { return this.run("explain", b); }
   sar(b: Brief): Promise<NarrationResult> { return this.run("sar", b); }
+  explainToCustomer(b: Brief): Promise<NarrationResult> { return this.run("customer", b); }
 }
 
 export class NarratorError extends Error {
@@ -154,6 +170,7 @@ export class DecisionOnlyNarrator implements Narrator {
   readonly mode = "none" as const;
   async explain(): Promise<NarrationResult> { return { text: "", tokens: 0, fellBack: false }; }
   async sar(): Promise<NarrationResult> { return { text: "", tokens: 0, fellBack: false }; }
+  async explainToCustomer(): Promise<NarrationResult> { return { text: "", tokens: 0, fellBack: false }; }
 }
 
 /** The writer is always an AI model, chosen in .env. There is no template mode. */
